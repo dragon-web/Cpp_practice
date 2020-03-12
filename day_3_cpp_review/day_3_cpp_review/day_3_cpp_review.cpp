@@ -116,7 +116,7 @@ int ADD(int x, int y)
 }
 int main()
 {
-	cout << ADD(2, 85) << endl;
+	cout << ADD3(2, 85) << endl;
 	system("pause");
 	return 0;
-}
+} 
