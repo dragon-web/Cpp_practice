@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 
-
+#include<string.h>
 #include<iostream>
 using namespace std;
 /*
@@ -182,17 +182,44 @@ class String
 private:
 	char* ptr;
 public:
-	String(char)
-
-
+	String( char* s)
+	{
+		ptr = new char[strlen(s) + 1];
+		strcpy(ptr, s);
+	}
+	~String()
+	{
+		delete ptr;
+	}
+	void print()
+	{
+		cout << ptr << endl;
+	}
+	String &operator =  ( String & s);//函数返回引用更为有效
 };
+
+String &String::operator=(String &s )
+{
+	if (this == &s)
+	{
+		return *this;
+	}
+	else {
+		delete ptr;
+		ptr = new char[strlen(s.ptr) + 1];
+		strcpy(ptr, s.ptr);
+		return *this;
+	}
+}
 
 int main()
 {
-
-
-
-
+	char* str = (char*)"你好";
+	String p1(str);
+	char* str1 =(char*) "我美吗";
+	String p2(str1);
+	p1 = p2;
+	p1.print();
 	system("pause");
 	return 0;
 }
