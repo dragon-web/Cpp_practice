@@ -34,7 +34,7 @@ int main()
 	system("pause");
 	return 0;
 }
-*/
+
 int Judge(int num)
 {
 	int sum = 0;
@@ -57,6 +57,47 @@ int main()
 	cin >> num;
 	int p = Judge(num);
 	cout << p << endl;
+	system("pause");
+	return 0;
+}
+*/
+template<class T>
+class Stack
+{
+private:
+	T* date;
+	int size;
+	int top;
+	int IsEmpty()
+	{
+		return (top <= 0) ? 1 : 0;
+	}
+	int IsFull()
+	{
+		return (top >= size) ? 1 : 0;
+	}
+public:
+	Stack(int n) {
+		date = new T[n];
+		size = n;
+		top = 0;
+	}
+	~Stack()
+	{
+		delete date;
+	}
+	void pop(T a);
+	T push();
+};
+
+
+
+
+
+
+int main()
+{
+
 	system("pause");
 	return 0;
 }
