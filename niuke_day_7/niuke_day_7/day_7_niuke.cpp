@@ -56,7 +56,7 @@ int main()
 	system("pause");
 	return 0;
 }
-*/
+
 
 #include <iostream>
 #include <math.h>
@@ -71,7 +71,7 @@ bool IsCom(int num)
 		{
 			sum += i;
 		}
-	}*/
+	}
 	for (int i = 2; i < sqrt(num); i++)
 	{
 		if (num%i == 0)
@@ -113,5 +113,49 @@ int main()
 	{
 		cout << count(n) << endl;
 	}
+	return 0;
+}
+
+//¶Î´íÎó
+int main()
+{
+	const char *p = "abc";
+	const char *q = "abc123";
+	while (*p = *q)
+	{
+		printf("%c %c", *p, *q);
+	}
+	system("pasue");
+	return 0;
+}
+
+
+template <class T>
+struct sum {
+	 void foo(T op1, T op2)
+	{
+		cout << op1 << op2;
+	}
+};
+//sum<int>foo(1,3);
+sum::foo(1, 2);
+//sum::<int>foo(1, 3);
+sum<int>::foo(1,3);
+int main()
+{
+	int a[] = { 1,2,3,4,5 };
+	int *p[] = { a,a + 1,a + 2,a + 3,a + 4 };
+	int **pp = p;
+	printf("%d", *(p[0] + 1) + **(pp + 2));
+	system("pause");
+	return 0;
+}
+*/
+
+int main()
+{
+	long long a = 1, b = 2, c = 3;
+	printf("%d %d %d", a, b, c);
+	system("pause");
 	return 0;
 }
