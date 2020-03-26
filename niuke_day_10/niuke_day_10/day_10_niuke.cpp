@@ -4,7 +4,7 @@
 #include<string>
 #include<vector>
 using namespace std;
-
+//动态规划字符串匹配问题
 void getCommonStrLength(string &str1, string &str2)
 {
 	int len1 = str1.size();
@@ -18,7 +18,7 @@ void getCommonStrLength(string &str1, string &str2)
 		for (int j = 0; j < len2; j++)
 		{
 			//如果当前结尾的字符相等，则在dp[i-1][j-1]的基础上加1
-			if ((str1[i] == str2[j]) || (str1[i] + 32 - 'a') % 32 == (str2[j] + 32 - 'a') % 32)
+			if ((str1[i] == str2[j]))
 			{
 				if (i >= 1 && j >= 1)
 					dp[i][j] = dp[i - 1][j - 1] + 1;
@@ -32,14 +32,13 @@ void getCommonStrLength(string &str1, string &str2)
 		}
 	}
 	cout << max << endl;
-
 }
 int main()
 {
 	string str1,str2;
-	cin >> str1;
-	cin >> str2;
+	cin >> str1>>str2;
 	getCommonStrLength(str1, str2);
 	system("pause");
 	return 0;
 }
+
