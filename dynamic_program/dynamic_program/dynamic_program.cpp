@@ -29,17 +29,14 @@ int main()
 }
 */
 
-void printcom(char* a, char* b)
+void printcom(char** a)
 {
 
 
 }
-
-
-
-
 int main()
 {
+  
 
 	system("pause");
 	return 0;
