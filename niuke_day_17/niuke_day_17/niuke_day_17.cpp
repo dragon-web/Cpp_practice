@@ -1,11 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS 
-/*#include<conio.h>
+#include<conio.h>
 #include<stdlib.h>
 #include<time.h>
 #include<iostream>
 using namespace std;
 
-
+/*
 int main()
 {
 	float o, m;
@@ -23,9 +23,7 @@ int main()
 	cout << pi << endl;
 	_getch();
 	return 1;
-}
-
-
+}*/
 int getSum(int a, int b)
 {
 	while (a&b)
@@ -33,23 +31,28 @@ int getSum(int a, int b)
 		int n = a;
 		int m = b;
 		a = m ^ n;
-		b = (unsigned int)(n&m) << 1;
+		b = (n&m) << 1;
 	}
 	return a^b;
 }
-
+//1:如果不产生进位 则异或就是相加
+//2: 如果产生进位,a 将不进位的位保留下来 //b = (n&m) << 1;产生进位
+//循环是直到不产生进位为止
 int main()
 {
 	int num1, num2;
-	cin >> num1 >> num2;
-	int p = getSum(num1, num2);
-	cout << p << endl;
+	
+	while (cin >> num1 >> num2)
+	{
+		int p = getSum(num1, num2);
+		cout << p << endl;
+	}
 	system("pause");
 	return 0;
 }
 
 
-void Judge(int a, int b, int c)
+/*void Judge(int a, int b, int c)
 {
 	if ((a + b > c) && (a - b < c) && (b + c > a) && (b - c < a) && (a - c < b) && (a + c > b))
 	{
@@ -60,14 +63,13 @@ void Judge(int a, int b, int c)
 		cout << "No" << endl;
 	}
 }
-
 int main()
 {
 	int a, b, c;
 	cin >> a >> b >> c;
 	system("pause");
 	return 0;
-}*/
+}
 #include<iostream>
 using namespace std;
 
@@ -92,3 +94,4 @@ int main()
 	}
 	return 0;
 }
+*/
