@@ -3,6 +3,7 @@
 #include<iostream>
 #include<assert.h>
 #include<stack>
+#include<vector>
 using namespace std;
 typedef struct BinTreeNode
 {
@@ -166,6 +167,30 @@ void _PostOrderNoRu(BinTreeNode *t)
 	}
 }
 
+vector<int> inorderTraversal(BinTreeNode* root)//迭代的方式实现非递归遍历
+{
+	if (root != NULL)
+	{
+		BinTreeNode* temp = root;
+		stack<BinTreeNode*> s;
+		vector<int> res;
+		s.push(root);
+		while (!s.empty() || temp != NULL)
+		{
+			while (temp != NULL)
+			{
+				s.push(temp);
+				temp = temp->left;
+			}
+			if (temp->right != NULL)
+			{
+
+			}
+
+
+		}
+	}
+}
 
 /*
 void _PostOrderNoRu(BinTreeNode *t);
