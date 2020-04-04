@@ -131,29 +131,67 @@ void _InOrderNoRu(BinTreeNode *t)
 		} while (!dp.empty() || t != NULL);
 	}
 }
-/*
+
+void _PostOrderNoRu(BinTreeNode *t);
 void PostOrderNoRu(BinTree *t)
 {
 	_PostOrderNoRu(t->root);
 }
-void _PostOrderNoRu(BinTreeNode *p)
+void _PostOrderNoRu(BinTreeNode *t)
+{
+	if (t != NULL)
+	{
+		BinTreeNode* p, *pre = NULL;
+		do
+		{
+			while (t != NULL)
+			{
+				dp.push(t);
+		
+		t = t->left;
+			}
+			p = dp.top();
+			if (p->right == NULL || p->right == pre)
+			{
+				dp.pop();
+				cout << p->val;
+				pre = p;
+			}
+			else
+			{
+				t = p;
+				t = t->right;
+			}
+		} while (!dp.empty());
+	}
+}
+
+
+/*
+void _PostOrderNoRu(BinTreeNode *t);
+
+void PostOrderNoRu(BinTree *t)
+{
+	_PostOrderNoRu(t->root);
+}
+void _PostOrderNoRu(BinTreeNode *t)
 {
 
 }*/
-
-
 int main()
 {
 	BinTree Tree;
 	BinTreeCreate_1(&(Tree.root));
+
 	/*cout << "前序遍历" << endl;
 	PreOrder(&Tree);
 	cout << "中序遍历" << endl;
 	InOrder(&Tree);
 	cout << "后序遍历" << endl;
 	PostOrder(&Tree);
-	PreOrderNoRu(&Tree);*/
-	InOrderNoRu(&Tree);
+	PreOrderNoRu(&Tree);
+	InOrderNoRu(&Tree);*/
+	PostOrderNoRu(&Tree);
 	system("pause");
 	return 0;
 }
