@@ -89,7 +89,7 @@ void Exchange(int i, int n)//将最大叶子结点与根结点交换
 	a[n] = temp;
 
 }
-
+//递归创建的堆排
 void Created(int n)
 {
 	if (n == 2) {//当只剩两个的时候，直接比较大小 先输出最大的 然后输出最小的 
@@ -105,7 +105,7 @@ void Created(int n)
 	{//最后一个根结点是第n/2个 但是第一个数下标为0  所以最后一个根结点下标为n/2-1 
 		if (a[2 * i + 1] > a[i] && 2 * i + 1 < n)//与左孩子进行比较 
 			Exchange(i, 2 * i + 1);
-		if (a[2 * i + 2] > a[i] && 2 * i + 2 < n)//与右孩子进行比较 
+		if (a[2 * i + 2] > a[i] && 2 * i + 2 < n)//与右孩子进行比较    
 			Exchange(i, 2 * i + 2);
 	}
 	int t;
