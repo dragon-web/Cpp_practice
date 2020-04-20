@@ -89,36 +89,37 @@ typedef struct ListNode
 }ListNode;
 int main()
 {
-	int N = 5, B = 24;
+	int N = 6, B = 20;
 	//cin >> N >> B;
 	vector<int> dp(N);
 	vector<ListNode> dpv(N);//初始化N个节点空间
 	for (int i = 0; i < N; i++)
 	{
 		cin >> dpv[i].price >> dpv[i].run;
-		dp[i] = dpv[i].price + dpv[i].run;
 	}
 	sort(dp.begin(), dp.end());//默认升序
-	for (int i = 1; i < N; ++i)
+	//对dpv向量进行排序
+	
+	for (int i = 0; i < N - 1; ++i)
 	{
-		if (dp[i - 1] == dp[i] && dpv[i - 1].price > dpv[i].price)
-			swap(dpv[i - 1], dpv[i]);
+		if ((dpv[i].price + dpv[i].run) > (dpv[i + 1].price + dpv[i + 1].run))
+		{
+			swap(dpv[i], dpv[i + 1]);
+		}
 	}
-	//此时得到的向量空间就是升序的
+	//此时得到的dpv向量空间就是升序的
 	int count = 0;
-	auto it = dp.begin();
+	auto it = dpv.begin();
 	//关键优惠劵给哪个牛，应该是最大优惠的那个牛即礼物临届最贵的牛
-	while (it != dp.end() && B - (*it) > 0)
+	while (it != dpv.end() && (B - (*it).price-(*it).run) > 0)
 	{
 		count++;
-		B -= (*it);
+		B = B - (*it).price - (*it).run;
 		it++;
 	}
-	if (it == dp.end())//此时所有牛都获得礼物
-	{
-	}
+	if (it == dpv.end());//此时所有牛都获得礼物
 	//此时B不能全额为下一头牛购买礼物
-	else if (B >= (dpv[count].price / 2 + dpv[count].run))
+	else if (B >= (dpv[count].price / 2 + dpv[count].run)||(B >= (dpv[count-1].price / 2 + dpv[count].run)))
 	{
 		count++;
 	}
