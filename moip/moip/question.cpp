@@ -102,9 +102,12 @@ int main()
 	
 	for (int i = 0; i < N - 1; ++i)
 	{
-		if ((dpv[i].price + dpv[i].run) > (dpv[i + 1].price + dpv[i + 1].run))
+		for (int j = 0; j < N - 1-i; ++j)
 		{
-			swap(dpv[i], dpv[i + 1]);
+			if ((dpv[j].price + dpv[j].run) > (dpv[j+1].price + dpv[j+1].run))
+			{
+				swap(dpv[j], dpv[j + 1]);
+			}
 		}
 	}
 	//此时得到的dpv向量空间就是升序的
