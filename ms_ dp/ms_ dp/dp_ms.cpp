@@ -76,11 +76,12 @@ d表示是否已经出现1，4相连的两数
 
 //递归的思路
 /*
-1 
+1
 2 3
 4 5 6
 7 8 9 5
-
+*/
+/*
 #include<iostream>
 #include<math.h>
 #include<algorithm>
@@ -100,29 +101,40 @@ int getmax(int a, int b)
 }
 int Solution(int row)   //row 行  col 列  
 {
-	int Answer;
+	int Answer = 0;
 	int temp;
 	int R = 0;
 	int C = 0; //R当前行数 C 当前列数
-	while (R < row-1)
+	if (C == 0 && R == 0)
 	{
-		int Num = R + 1;//当前的列数的最大值
-		if (C==0)
-		if (C == 0&&Num!=0)
+		Answer += arr[0][0];
+		R++;
+	}
+	while (R < row - 1)
+	{
+
+		int Num = R;//当前行数所对应列数的最大值-1 从0开始
+
+		if (C == 0 && R != 0)//如果处于第一列且不是第一行
 		{
-			 temp = getmax(arr[R + 1][C + 1] + arr[R][C + 1], arr[R + 1][C]);
+			temp = getmax(arr[R + 1][C + 1] + arr[R][C + 1], arr[R + 1][C]) + arr[R][0];
+			//更新C的值
+			if (temp == arr[R + 1][C + 1] + arr[R][C + 1] + arr[R][0])
+			{
+				C++;
+			}
+			if (temp == arr[R + 1][C] + arr[R][0] + arr[R][0]);
 			Answer += temp;
 		}
-			if (C < Num - 1 && C > 0)
+			if (C < Num && C > 0)
 			{
 			 temp = getmax(arr[R+1][C], arr[R + 1][C + 1]+ arr[R][C+1], arr[R][C - 1] + arr[R + 1][C - 1]);
 				Answer += temp;
 			}
-			if (C == Num - 1&& C!=0)
+			if (C == Num && C!=0)
 			{
 				temp = getmax(arr[R + 1][C - 1]+ arr[R][C-1], arr[R + 1][C]);
 			}
-		
 		R++;
 	}
 	return Answer;
@@ -131,6 +143,7 @@ int Solution(int row)   //row 行  col 列
 int main() 
 {
 	int n;
+	cout << "请输入行数" << endl;
 	cin >> n;
 	int i;
 	for (i = 0; i < n; i++) {
@@ -139,11 +152,104 @@ int main()
 		}
 	}
 	int ans = Solution(i);
-	cout << ans << endl;
-	return 0;
+	cout << "最大路径和"<<ans << endl;
 	system("pause");
+	return 0;
+}
+
+*/
+
+
+/*
+#include<iostream>
+#include<math.h>
+#include<algorithm>
+using namespace std;
+int a[1001][1001], n;
+
+//求出二维数组坐标(x,y)的最大值。 
+
+int f(int x, int y) {
+	if (x == n)
+	return a[x][y];
+	int temp;
+	return  a[x][y] +
+(temp = max(f(x + 1, y), f(x + 1, y + 1)) > max(f(x + 1, y), f(x + 1, y + 1)) 
+	? max(f(x + 1, y), f(x + 1, y + 1)) : 
+	max(f(x + 1, y), f(x + 1, y + 1)));
+}
+int main() {
+	cin >> n;
+	for (int i = 1; i <= n; i++) {
+		for (int j = 1; j <= i; j++) {
+			cin >> a[i][j];
+		}
+	}
+	cout << f(1, 1);
+	system("pause");
+	return 0;
 }
 */
+
+/*#include<iostream>
+#include<algorithm>
+#define maxn 100 
+using namespace std;
+
+int a[maxn][maxn], N, total, did[maxn][maxn];
+
+int f(int i, int j) {
+	if (i == N - 1)
+		return a[i][j];
+	if (did[i][j])
+		return did[i][j];
+	did[i][j] = a[i][j] + max(f(i + 1, j), f(i + 1, j + 1));
+	return did[i][j];
+}
+int main() {
+	cin >> N;
+	for (int i = 0; i < N; i++) {
+		for (int j = 0; j <= i; j++) {
+			cin >> a[i][j];
+		}
+	}
+	cout << f(0, 0);
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /*
