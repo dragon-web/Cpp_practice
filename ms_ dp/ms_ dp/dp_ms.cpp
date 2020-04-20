@@ -80,7 +80,7 @@ d表示是否已经出现1，4相连的两数
 2 3
 4 5 6
 7 8 9 5
-*/
+
 #include<iostream>
 #include<math.h>
 #include<algorithm>
@@ -143,3 +143,24 @@ int main()
 	return 0;
 	system("pause");
 }
+*/
+
+
+/*
+#include<iostream>
+using namespace std;
+int main()
+{
+
+	int a;
+	int *p = &a;
+	printf("请输入一个整数：");
+	scanf("%d", &a);
+	printf("a=%d\n", a);
+	printf("请重新输入一个整数：");
+	scanf("%d", p);//p本来存放a的地址
+	printf("a=%d\n", a);
+	system("pause");
+	return 0;
+}
+*/
