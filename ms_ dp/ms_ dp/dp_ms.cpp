@@ -80,8 +80,9 @@ d表示是否已经出现1，4相连的两数
 2 3
 4 5 6
 7 8 9 5
+5 8 6 9 7
 */
-/*
+
 #include<iostream>
 #include<math.h>
 #include<algorithm>
@@ -157,7 +158,6 @@ int main()
 	return 0;
 }
 
-*/
 
 
 /*
