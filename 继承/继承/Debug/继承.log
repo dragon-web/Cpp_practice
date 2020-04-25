@@ -1,29 +1,191 @@
 ﻿  inherit.cpp
-c:\users\飞龙\desktop\cpp_practice\继承\继承\inherit.cpp(39): error C2679: 二进制“<<”: 没有找到接受“std::string”类型的右操作数的运算符(或没有可接受的转换)
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(508): note: 可能是“std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_streambuf<char,std::char_traits<char>> *)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(480): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(const void *)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(460): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long double)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(440): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(double)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(420): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(float)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(400): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned __int64)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(380): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(__int64)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(360): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned long)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(340): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(long)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(320): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned int)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(295): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(int)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(275): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(unsigned short)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(241): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(short)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(221): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(bool)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(215): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::ios_base &(__cdecl *)(std::ios_base &))”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(209): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ios<char,std::char_traits<char>> &(__cdecl *)(std::basic_ios<char,std::char_traits<char>> &))”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(204): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::basic_ostream<char,std::char_traits<char>>::operator <<(std::basic_ostream<char,std::char_traits<char>> &(__cdecl *)(std::basic_ostream<char,std::char_traits<char>> &))”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(1047): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const std::error_code &)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(981): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,unsigned char)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(974): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const unsigned char *)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(967): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,signed char)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(960): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const signed char *)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(834): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,char)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(787): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::operator <<<std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(749): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,char)”
-  c:\program files (x86)\microsoft visual studio\2017\professional\vc\tools\msvc\14.16.27023\include\ostream(702): note: 或    “std::basic_ostream<char,std::char_traits<char>> &std::operator <<<char,std::char_traits<char>>(std::basic_ostream<char,std::char_traits<char>> &,const char *)”
-  c:\users\飞龙\desktop\cpp_practice\继承\继承\inherit.cpp(39): note: 尝试匹配参数列表“(std::ostream, std::string)”时
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(94): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(94): error C2146: 语法错误: 缺少“;”(在标识符“MMVERSION”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(102): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(102): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(112): error C3646: “ms”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(112): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(113): error C3646: “sample”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(113): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(114): error C3646: “cb”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(114): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(115): error C3646: “ticks”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(115): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(120): error C3646: “hour”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(120): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(121): error C3646: “min”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(121): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(122): error C3646: “sec”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(122): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(123): error C3646: “frame”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(123): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(124): error C3646: “fps”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(124): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(125): error C3646: “dummy”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(125): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(127): error C3646: “pad”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(127): error C2143: 语法错误: 缺少“,”(在“[”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(127): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(127): error C2238: 意外的标记位于“;”之前
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(134): error C3646: “songptrpos”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(134): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(137): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(137): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(137): error C2377: “FAR”: 重定义；typedef 不能由任何其他符号重载
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(102): note: 参见“FAR”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(275): error C2065: “HDRVR”: 未声明的标识符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(275): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(297): error C2146: 语法错误: 缺少“)”(在标识符“DRVCALLBACK”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(297): error C2146: 语法错误: 缺少“;”(在标识符“DRVCALLBACK”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(297): error C2059: 语法错误:“)”
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(297): error C2065: “HDRVR”: 未声明的标识符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(297): error C2146: 语法错误: 缺少“)”(在标识符“hdrvr”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(299): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(299): error C2146: 语法错误: 缺少“;”(在标识符“FAR”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(299): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(299): error C2086: “int FAR”: 重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(137): note: 参见“FAR”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(37): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(37): error C2146: 语法错误: 缺少“;”(在标识符“MCIERROR”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(45): error C2143: 语法错误: 缺少“)”(在“*”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(45): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(45): error C2371: “CALLBACK”: 重定义；不同的基类型
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(297): note: 参见“CALLBACK”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(45): error C2059: 语法错误:“)”
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(45): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(52): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(52): error C2146: 语法错误: 缺少“;”(在标识符“MCIERROR”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(62): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(62): error C2086: “int DECLSPEC_IMPORT”: 重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(50): note: 参见“DECLSPEC_IMPORT”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(62): error C2146: 语法错误: 缺少“;”(在标识符“MCIERROR”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(77): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(77): error C2086: “int DECLSPEC_IMPORT”: 重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(50): note: 参见“DECLSPEC_IMPORT”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(77): error C2146: 语法错误: 缺少“;”(在标识符“MCIERROR”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(87): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(87): error C2086: “int DECLSPEC_IMPORT”: 重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(50): note: 参见“DECLSPEC_IMPORT”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(87): error C2146: 语法错误: 缺少“;”(在标识符“MCIERROR”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(102): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(102): error C2086: “int DECLSPEC_IMPORT”: 重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(50): note: 参见“DECLSPEC_IMPORT”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(102): error C2146: 语法错误: 缺少“;”(在标识符“MCIDEVICEID”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(109): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(109): error C2086: “int DECLSPEC_IMPORT”: 重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(50): note: 参见“DECLSPEC_IMPORT”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(109): error C2146: 语法错误: 缺少“;”(在标识符“MCIDEVICEID”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(121): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(121): error C2086: “int DECLSPEC_IMPORT”: 重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(50): note: 参见“DECLSPEC_IMPORT”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(121): error C2146: 语法错误: 缺少“;”(在标识符“MCIDEVICEID”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(129): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(129): error C2086: “int DECLSPEC_IMPORT”: 重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(50): note: 参见“DECLSPEC_IMPORT”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(129): error C2146: 语法错误: 缺少“;”(在标识符“MCIDEVICEID”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(142): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(142): error C2086: “int DECLSPEC_IMPORT”: 重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(50): note: 参见“DECLSPEC_IMPORT”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(142): error C2146: 语法错误: 缺少“;”(在标识符“BOOL”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(151): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(151): error C2086: “int DECLSPEC_IMPORT”: 重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(50): note: 参见“DECLSPEC_IMPORT”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(151): error C2146: 语法错误: 缺少“;”(在标识符“BOOL”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(173): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(173): error C2086: “int DECLSPEC_IMPORT”: 重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(50): note: 参见“DECLSPEC_IMPORT”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(173): error C2146: 语法错误: 缺少“;”(在标识符“BOOL”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(202): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(202): error C2086: “int DECLSPEC_IMPORT”: 重定义
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(50): note: 参见“DECLSPEC_IMPORT”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(202): error C2146: 语法错误: 缺少“;”(在标识符“BOOL”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(499): error C3646: “dwCallback”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(499): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(500): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(500): error C2371: “FAR”: 重定义；不同的基类型
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(137): note: 参见“FAR”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(500): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(507): error C3646: “dwCallback”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(507): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(509): error C3646: “lpstrDeviceType”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(509): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(510): error C3646: “lpstrElementName”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(510): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(511): error C3646: “lpstrAlias”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(511): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(514): error C3646: “dwCallback”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(514): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(516): error C3646: “lpstrDeviceType”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(516): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(517): error C3646: “lpstrElementName”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(517): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(518): error C3646: “lpstrAlias”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(518): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(544): error C3646: “dwCallback”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(544): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(547): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(547): error C2371: “FAR”: 重定义；不同的基类型
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(137): note: 参见“FAR”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(547): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(552): error C3646: “dwCallback”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(552): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(554): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(554): error C2371: “FAR”: 重定义；不同的基类型
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(137): note: 参见“FAR”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(554): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(559): error C3646: “dwCallback”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(559): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(560): error C3646: “dwReturn”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(560): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(563): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(563): error C2371: “FAR”: 重定义；不同的基类型
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(137): note: 参见“FAR”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(563): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(570): error C3646: “dwCallback”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(570): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(571): error C3646: “lpstrReturn”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(571): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(575): error C3646: “dwCallback”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(575): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(576): error C3646: “lpstrReturn”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(576): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(598): error C3646: “dwCallback”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(598): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(601): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(601): error C2371: “FAR”: 重定义；不同的基类型
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(137): note: 参见“FAR”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(601): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(608): error C3646: “dwCallback”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(608): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(609): error C3646: “lpstrReturn”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(609): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(615): error C3646: “dwCallback”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(615): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(616): error C3646: “lpstrReturn”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(616): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(644): error C3646: “dwCallback”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(644): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(647): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(647): error C2371: “FAR”: 重定义；不同的基类型
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(137): note: 参见“FAR”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(647): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(652): error C3646: “dwCallback”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(652): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(655): error C3646: “hwndBreak”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(655): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(662): error C2143: 语法错误: 缺少“;”(在“*”的前面)
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(662): error C2371: “FAR”: 重定义；不同的基类型
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mmsyscom.h(137): note: 参见“FAR”的声明
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(662): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(669): error C3646: “dwCallback”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(669): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(670): error C3646: “lpfilename”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(670): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(673): error C3646: “dwCallback”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(673): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(674): error C3646: “lpfilename”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(674): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(698): error C3646: “dwCallback”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(698): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(699): error C3646: “lpfilename”: 未知重写说明符
+c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\mciapi.h(699): fatal error C1003: 错误计数超过 100；正在停止编译
