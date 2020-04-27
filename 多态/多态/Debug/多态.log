@@ -1,0 +1,4 @@
+﻿  polymorphic.cpp
+c:\users\飞龙\desktop\cpp_practice\多态\多态\polymorphic.cpp(135): warning C4244: “return”: 从“double”转换到“float”，可能丢失数据
+c:\users\飞龙\desktop\cpp_practice\多态\多态\polymorphic.cpp(142): warning C4305: “参数”: 从“double”到“float”截断
+  多态.vcxproj -> C:\Users\飞龙\Desktop\Cpp_practice\多态\Debug\多态.exe
