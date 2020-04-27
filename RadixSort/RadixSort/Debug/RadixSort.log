@@ -1,2 +1,35 @@
 ﻿  RadixSort.cpp
-  RadixSort.vcxproj -> C:\Users\飞龙\Desktop\Cpp_practice\RadixSort\Debug\RadixSort.exe
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(113): error C3872: “0xa0”: 此字符不允许在标识符中使用
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(113): error C2065: “int i ”: 未声明的标识符
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(113): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(113): error C3861: “for ”: 找不到标识符
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(113): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(113): error C2065: “ i ”: 未声明的标识符
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(113): error C2065: “ ”: 未声明的标识符
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(113): error C2146: 语法错误: 缺少“;”(在标识符“i”的前面)
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(113): error C2059: 语法错误:“)”
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(113): error C2065: “i”: 未声明的标识符
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(115): error C2065: “i”: 未声明的标识符
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(115): error C2059: 语法错误:“;”
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(117): error C3872: “0xa0”: 此字符不允许在标识符中使用
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(117): error C2065: “int j ”: 未声明的标识符
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(117): error C2143: 语法错误: 缺少“)”(在“;”的前面)
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(117): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(117): error C3873: “0xa0”: 不允许将此字符作为标识符的第一个字符
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(117): error C2143: 语法错误: 缺少“;”(在“<”的前面)
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(117): error C2143: 语法错误: 缺少“;”(在“++”的前面)
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(117): error C2059: 语法错误:“)”
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(118): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(118): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(119): error C3872: “0xa0”: 此字符不允许在标识符中使用
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(121): error C3872: “0xa0”: 此字符不允许在标识符中使用
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(123): warning C4566: 由通用字符名称“\u00A0”表示的字符不能在当前代码页(936)中表示出来
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(123): error C3872: “0xa0”: 此字符不允许在标识符中使用
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(127): error C2059: 语法错误:“}”
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(127): error C2143: 语法错误: 缺少“;”(在“}”的前面)
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(128): error C3872: “0xa0”: 此字符不允许在标识符中使用
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(128): error C2143: 语法错误: 缺少“;”(在“{”的前面)
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(128): error C2447: “{”: 缺少函数标题(是否是老式的形式表?)
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(129): error C3872: “0xa0”: 此字符不允许在标识符中使用
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(130): error C3872: “0xa0”: 此字符不允许在标识符中使用
+c:\users\飞龙\desktop\cpp_practice\radixsort\radixsort\radixsort.cpp(132): error C3872: “0xa0”: 此字符不允许在标识符中使用

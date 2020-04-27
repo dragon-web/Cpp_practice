@@ -1,4 +1,4 @@
-#define _CRT_SECURE_NO_WARNINGS 
+﻿#define _CRT_SECURE_NO_WARNINGS 
 #define K 3
 #define RADIX 10
 #include<iostream>
@@ -57,9 +57,9 @@ void RadixSort(int *ar, int left, int right)
 	}
 	for (int i = 0; i < K; ++i)
 	{
-		//1 �ַ�
+		//1 分发
 		Distribute(ar, left, right, i);
-		//2 ����
+		//2 回收
 		Collect(ar);
 	}
 }
@@ -73,22 +73,22 @@ int main()
 */
 
 
-void RadixSort(int *arr, int length)
+/*void RadixSort(int *arr, int length)
 {
-	int* p = (int*)malloc(sizeof(int)*length);//����Ͱ�ռ�
-	memset(p, 0,length*sizeof(int));//�����Ͱ�ռ��ʼ��Ϊ�����ܳ��ֵ�ֵ
-	for (int i = 0; i < length; ++i)
+	int* p = (int*)malloc(sizeof(int)*(length+1));//申请桶空间
+	memset(p, 0,(length+1)*sizeof(int));//将这个桶空间初始化为不可能出现的值（比如0）
+	for (int i = 1; i <= length; ++i)
 	{
-		p[arr[i] - 1] += 1;
+		p[arr[i-1]] += 1;
 	}
-	for (int j = 0; j < length; ++j)
+	for (int j = 1; j <= length; ++j)
 	{
 		if (p[j] == 0)
 			continue;
 		else
 			while (p[j])
 			{
-				printf("%d ", j + 1);
+				printf("%d ", j);
 				p[j]--;
 			}
 	}
@@ -101,6 +101,35 @@ int main()
 	RadixSort(arr, sz);
 	system("pause");
 	return 0;
+}
+*/
+
+
+void RadixSort(int *arr, int length)
+{
+	//申请桶空间 
+	int* p = (int*)malloc(sizeof(int)*length); //将这个桶空间初始化为不可能出现的值 
+	memset(p, 0, length * sizeof(int));
+	for (int i  = 0; i  < length; ++i)
+	{
+		p[arr[i] - 1] += 1;
+	}
+	for (int j  = 0; j  < length; ++j)
+	{
+		if (p[j] == 0)
+			continue;
+		else   while (p[j])
+		{
+			printf("%d ", j  + 1);
+			p[j]--;
+		}
+	}
+}
+int main() {
+	int arr[] = { 4,8,6,9,7,2,2,1,6 };
+	int sz  = sizeof(arr) / sizeof(arr[0]);
+	RadixSort(arr, sz);
+	return 0;
 }
 
 
@@ -176,9 +205,9 @@ int main()
 		}
 		for (int i = 0; i < K; ++i)
 		{
-			//1 �ַ�
+			//1 分发
 			Distribute(ar, left, right, i);
-			//2 ����
+			//2 回收
 			Collect(ar);
 		}
 	}
