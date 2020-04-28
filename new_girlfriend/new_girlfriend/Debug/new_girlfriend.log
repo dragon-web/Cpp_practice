@@ -1,0 +1,7 @@
+﻿  new_girlfriend.cpp
+c:\users\飞龙\desktop\cpp_practice\new_girlfriend\new_girlfriend\new_girlfriend.cpp(116): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\飞龙\desktop\cpp_practice\new_girlfriend\new_girlfriend\new_girlfriend.cpp(135): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\飞龙\desktop\cpp_practice\new_girlfriend\new_girlfriend\new_girlfriend.cpp(161): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\飞龙\desktop\cpp_practice\new_girlfriend\new_girlfriend\new_girlfriend.cpp(180): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\飞龙\desktop\cpp_practice\new_girlfriend\new_girlfriend\new_girlfriend.cpp(206): warning C4018: “<”: 有符号/无符号不匹配
+  new_girlfriend.vcxproj -> C:\Users\飞龙\Desktop\Cpp_practice\new_girlfriend\Debug\new_girlfriend.exe
