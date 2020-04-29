@@ -61,26 +61,28 @@ int Solution::FinfCommonHeigth()//找到最大相同高度值的个数
 	}
 	return res;
 }
-int Solution::FindCommonValue()//找到最大相同高度值的个数
+int Solution::FindCommonValue()//找到最大相同高度值需要再申请一个数组
 {
 	int i = 0;
 	int j = 0;
 	int temp = 0;
-	int max = 0;
 	int res = 0;
+	int max = 0;
+	int* p = new int[Arr->size()]();
 	for (i = 0; i < Arr->size(); ++i)
 	{
-		for (j = 0; j < Arr->size(); ++j)
-		{
-			if ((*Arr)[i] == (*Arr)[j])
-			{
-				temp++;
-			}
-		}
-		res = temp > res ? temp : res;
-		temp = 0;
+		p[(*Arr)[i]] += 1;
 	}
-	return max;
+	for (int j = 0; j < Arr->size(); ++j)
+	{
+		max = max > p[j] ? max : p[j];
+	}//我要找的是下标对不对
+	for (int k = 0; k < Arr->size(); ++k)
+	{
+		if (max == p[k])
+			return k;
+	}
+	return -1;
 }
 
 void Solution::move()
@@ -88,12 +90,16 @@ void Solution::move()
 	int max = FindTargetH();//最大值的位置
 	int min = FindTargetL();//最小值的位置
 	FinfCommonHeigth();
+	int common = FindCommonValue();
+	if ((*Arr)[min] != common)
+	{
+		(*Arr)[min]++;
+	}
 	
-	
-	(*Arr)[min]++;
-	(*Arr)[max]--;
+	else { (*Arr)[max]--; }
+	sort(Arr->begin(), Arr->end());
 }
-
+//每次从最高塔的塔尖拿走一块或者从最低塔的塔底加一块（sort）
 int main()
 {
 	int n;
