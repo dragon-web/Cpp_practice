@@ -14,7 +14,7 @@ class Girl:public Person
 private:
 	string 
 }
-
+*/
 
 float f(float x, float y, float z) {
 	float a = x * x + 9.0f / 4.0f * y * y + z * z - 1;
@@ -29,28 +29,6 @@ float h(float x, float z) {
 }
 
 int main() {
-	cout << "骚年，想要个对象吗" << endl;
-	string mind;
-	string true_mind("Yes");
-	cin >> mind;
-	if (mind == true_mind)
-	{
-		cout << "很好，我们来创建个对象吧" << endl;
-		cout << "输入你梦想中对象的名字（没有就写苍老师）" << endl;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 		SetConsoleTextAttribute(GetStdHandle(STD_OUTPUT_HANDLE), 0x0C);
 		HANDLE o = GetStdHandle(STD_OUTPUT_HANDLE);
 		_TCHAR buffer[25][80] = { _T(' ') };
@@ -104,10 +82,10 @@ int main() {
 			Sleep(33);
 		}
 	}
-}*/
 
 
 
+/*
 string a;
 int main() {
 	int k;
@@ -223,3 +201,4 @@ int main() {
 	system("pause");
 	return 0;
 }
+*/
