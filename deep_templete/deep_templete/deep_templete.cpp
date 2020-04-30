@@ -66,5 +66,99 @@ int main()
 	system("pause");
 	return 0;
 }
-*/
 
+template <typename T>//我们尽量用这个typename
+
+T Abs(T value)
+{
+	return value > 0 ? value : -value;
+}
+int main()
+{
+	int nValue = -1, nResult;
+	double dbValue = -1.3, dblResult;
+	nResult = Abs(nValue);
+	dblResult = Abs(dbValue);
+	cout << nResult << "  " << dblResult << endl;
+	system("pause");
+	return 0;
+}
+
+
+template <typename Type>
+
+Type max(Type a, Type b)
+{
+	return a > b ? a : b;
+}
+
+template <typename Type>
+
+Type max(Type a, Type b, Type c)
+{
+	Type t;
+	t = a > b ? a : b;
+	return t > c ? t : c;
+}
+int main()
+{
+	
+	system("pause");
+	return 0;
+}*/
+
+#include<iostream>
+#include<string>
+#include<vector>
+
+using namespace std;
+
+void Judge(vector<string> &dp)
+{
+	for (int i = 0; i < dp.size(); i++)
+	{
+		auto it = dp[i].begin();
+		while (it < dp[i].end())
+		{
+			if ((it + 5) < dp[i].end())
+			{
+				if ((*it == *(it + 1) && *(it + 2) == *(it + 3) && *(it + 4) == *(it + 5)))
+				{
+					dp[i].erase(it + 2);
+					continue;
+				}
+			}
+			if ((it + 3) < dp[i].end())
+			{
+				if (*it == *(it + 1) && *(it + 2) == *(it + 3))
+				{
+					dp[i].erase(it + 2);
+					continue;
+				}
+			}
+			if ((it + 2) < dp[i].end())
+			{
+				if (*it == *(it + 1) && *(it + 1) == *(it + 2))
+				{
+					dp[i].erase(it);
+					continue;
+				}
+			}
+			it++;
+		}
+		cout << dp[i] << endl;
+	}
+}
+
+int main()
+{
+	int N;
+	cin >> N;
+	vector<string> p(N);
+	for (int i = 0; i < N; ++i)
+	{
+		cin >> p[i];
+	}
+	Judge(p);
+	return 0;
+}
