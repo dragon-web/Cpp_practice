@@ -105,8 +105,8 @@ int main()
 	
 	system("pause");
 	return 0;
-}*/
-
+}
+//下标的引用
 #include<iostream>
 #include<string>
 #include<vector>
@@ -117,33 +117,35 @@ void Judge(vector<string> &dp)
 {
 	for (int i = 0; i < dp.size(); i++)
 	{
+		int j = 0;
 		auto it = dp[i].begin();
-		while (it < dp[i].end())
+		while (j < dp[i].length())
 		{
-			if ((it + 5) < dp[i].end())
+			if (j+5 < dp[i].length())
 			{
-				if ((*it == *(it + 1) && *(it + 2) == *(it + 3) && *(it + 4) == *(it + 5)))
+				if ((dp[i].at(j) == dp[i].at(j+1) && dp[i].at(j + 2) ==dp[i].at(j+3)&& dp[i].at(j+4) == dp[i].at(j + 5)))
 				{
 					dp[i].erase(it + 2);
 					continue;
 				}
 			}
-			if ((it + 3) < dp[i].end())
+			if ((j + 2) < dp[i].length())
 			{
-				if (*it == *(it + 1) && *(it + 2) == *(it + 3))
+				if ((dp[i].at(j) == dp[i].at(j + 1) && (dp[i].at(j+1) == dp[i].at(j + 2))))
 				{
 					dp[i].erase(it + 2);
 					continue;
 				}
 			}
-			if ((it + 2) < dp[i].end())
+			if ((j + 3) < dp[i].length())
 			{
-				if (*it == *(it + 1) && *(it + 1) == *(it + 2))
+				if (dp[i].at(j) == dp[i].at(j + 1)&& (dp[i].at(j + 2) == dp[i].at(j + 3)))
 				{
-					dp[i].erase(it);
+					dp[i].erase(it+3);
 					continue;
 				}
 			}
+			j++;
 			it++;
 		}
 		cout << dp[i] << endl;
@@ -160,5 +162,56 @@ int main()
 		cin >> p[i];
 	}
 	Judge(p);
+	system("pause");
+	return 0;
+}
+*/
+
+//输出最小硬币数
+
+int Defalt(int N)
+{
+	int count = 1024 - N;
+	int num = 0;
+	while (count >= 0)
+	{
+		count -= 64;
+		num++;
+	}
+	count = count+64;//找到那个临届
+	num -= 1;
+	while (count>=0)
+	{
+		count -= 16;
+		num++;
+	}
+	count = count + 16;//找到那个临届
+	num -= 1;
+	while (count>=0)
+	{
+		count -= 4;
+		num++;
+	}
+	count = count + 4;//找到那个临届
+	num -= 1;
+	while (count>=0)
+	{
+		count -= 1;
+		num++;
+	}
+	count = count + 1;//找到那个临届
+	num -= 1;
+	return num;
+}
+
+
+int main()
+{
+	int N;
+	cin >> N;
+	int b = Defalt(N);
+	cout << b << endl;
+
+	system("pause");
 	return 0;
 }
