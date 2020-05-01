@@ -29,6 +29,37 @@ vector<vector<vector<int>>> Judge(vector<vector<int>> p)
 	
 	return res;
 }
+
+vector<vector<int>> Solution(vector<vector<int>> p)
+{
+	int temp = 0;
+	vector<vector<vector<int>>> res(10, vector<vector<int>>(16, vector<int>(16)));
+	vector<vector<int>> dp(16, vector<int>(16, 0));
+	for (int i = 0; i < 16; ++i)//行数
+	{
+		for (int j = 0; j < 16; ++j)//比较次数
+		{
+			for (int k = 0; k < 10; ++k)//列数
+			{
+				if (j + 1 < 16)
+				{
+					if (p[j][k] == p[j + 1][k])
+					{//	res[i][j][k] = 1;
+						temp++;
+					}
+					else
+					{
+					}
+				}
+
+			}
+			dp[i][j] = temp;
+			temp = 0;
+		}
+	}
+	return dp;
+}
+
 int main()
 {
 
