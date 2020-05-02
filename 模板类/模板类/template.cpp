@@ -2,7 +2,8 @@
 
 #include<iostream>
 #include<vector>
-#include<priority_queue>
+#include<queue>
+#include<functional>
 using namespace std;
 
 //函数模板可以重载
@@ -61,8 +62,26 @@ T Stack<T>::push(T a)
 
 }
 */
+
+
+
 int main()
 {
-	system("pause");
+	vector<int> ve = { 1,2,5,9,6 };
+	priority_queue<int> dp;
+	priority_queue<int, vector<int>, greater<int>> pq;
+	for (int i = 0; i < ve.size();++i)
+	{
+		dp.push(ve[i]);
+		pq.push(ve[i]);
+	}
+	while (pq.size() > 0 )
+	{
+		int temp = pq.top();
+		pq.pop();
+		cout << temp<<endl;
+	}
+		
+		system("pause");
 	return 0;
 }
