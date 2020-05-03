@@ -3,6 +3,7 @@
 #include<iostream>
 #include<vector>
 #include<queue>
+#include<string>
 #include<functional>
 using namespace std;
 
@@ -56,15 +57,7 @@ template<typename T>
 
 T Stack<T>::push(T a)
 {
-
-
-
-
 }
-*/
-
-
-
 int main()
 {
 	vector<int> ve = { 1,2,5,9,6 };
@@ -85,3 +78,69 @@ int main()
 		system("pause");
 	return 0;
 }
+
+
+int main()
+{
+	int *p = new int[36]();
+	for (int i = 0; i < 6; ++i)
+	{
+		for (int j = 0; j < 6; ++j)
+		{
+			cout << p[j] << " ";
+		}
+		cout << endl;
+	}
+	system("pause");
+	return 0;
+}
+
+
+//类模板
+
+template<class T1,class T2>
+class Pair
+{
+public:
+	T1 key;
+	T2 value;
+	Pair(T1 k,T2 v):key(k),value(v){}
+	bool operator<(const Pair<T1, T2> &p)const;
+};
+
+template<class T1, class T2>
+bool Pair<T1, T2>::operator<(const Pair<T1, T2> &p)const
+{
+	return key < p.key;
+}
+
+int main()
+{
+	Pair<string, int>student("Tom", 19);
+	cout << student.key << " " << student.value;
+	system("pause");
+	return 0;
+}
+
+//函数模板作为类模板的成员
+template<class T>
+class A
+{
+public:
+	template<class T2>
+	void Func(T2 t)
+	{
+		cout << t;
+	}
+};
+
+int main()
+{
+	A <int> a;
+	a.Func('K');
+	a.Func("Hello");
+	system("pause");
+	return 0;
+}
+*/
+
