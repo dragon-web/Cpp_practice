@@ -1,0 +1,3 @@
+﻿  meteor_Shower.cpp
+c:\users\飞龙\desktop\cpp_practice\项目\项目\meteor_shower.cpp(122): warning C4244: “+=”: 从“double”转换到“int”，可能丢失数据
+  项目.vcxproj -> C:\Users\飞龙\Desktop\Cpp_practice\项目\Debug\项目.exe
