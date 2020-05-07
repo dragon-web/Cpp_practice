@@ -53,14 +53,92 @@ void Print(int *arr, int length)
 	}
 }
 //选择排序优化  将findmax_index变成堆
+
+//快速排序
+/*int _Partition_1(int *ar,int left,int right)
+{
+	int key = ar[left];
+	while (left < right)
+	{
+		while (left < right && ar[right] >= key)
+			right--;
+		Swap(&ar[left], &ar[right]);
+		while (left < right && ar[left] < key)
+			left++;
+		Swap(&ar[left], &ar[right]);
+	}
+	return left;
+}
+*/
+//最坏情下希尔排序是O（n平方）（增量序列不互质（相邻的2个元素没有相邻公因子））
+/*void shell_sort(int *arr, int length)
+{
+	int gap;
+	for (gap = 3; gap > 0; gap--)
+	{
+
+	}
+
+
+}*/
+
+//插入排序
+//1,5,6,8, 3, 4, 2, 15, 96, 7, 85, 9, 82
+void InsertSort_1(int *ar, int left, int right)
+{
+	for (int i = left + 1; i <= right; ++i)
+	{
+		int tmp = ar[i];
+		int j = i;
+		while (j > left && tmp < ar[j - 1])//高明的手段
+		{
+			ar[j] = ar[j - 1];
+			j--;
+		}
+		ar[j] = tmp;
+	}
+}
+/*void Insert_sort_1(int *arr, int sz)
+{
+	int left = 0;
+	int right = sz - 1;
+	for (int i = left + 1; i < right; ++i)//不得并不佩服这个循环
+	{
+		int temp = arr[i];
+		int j = i;
+		while (j > left&&temp < arr[j - 1]);
+		{
+			arr[j] = arr[j - 1];
+			j--;
+		}
+		arr[j] = temp;
+	}
+}
+*/
+void InsertSort_2(int *ar, int left, int right)
+{
+	for (int i = left + 1; i <= right; ++i)
+	{
+		ar[0] = ar[i];
+		int j = i;
+		while (ar[0] < ar[j - 1])
+		{
+			ar[j] = ar[j - 1];
+			j--;
+		}
+		ar[j] = ar[0];
+	}
+}
+
+
 int main()
 {
 	int arr[] = { 1,5,6,8,3,4,2,15,96,7,85,9,82};
 //	int arr[] = { 2,15,96,7 };
 
 	int sz = sizeof(arr) / sizeof(arr[0]);
-	int p = FindMaxValue_Index(arr, sz);
-	Selection_sort(arr, sz);
+//	int p = FindMaxValue_Index(arr, sz);
+	InsertSort_1(arr,0, sz-1);
 	Print(arr, sz);
 	system("pause");
 	return 0;
