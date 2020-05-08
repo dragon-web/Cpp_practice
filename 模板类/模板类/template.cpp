@@ -144,3 +144,60 @@ int main()
 }
 */
 
+//可变长数组类模板
+
+template <typename T>
+
+class CArray
+{
+	int size;
+	T* ptr;
+public:
+	CArray(int s = 0);
+	CArray(CArray &a);
+	~CArray();
+	void push_bank(const T& v);
+	CArry & operator = (const T& v);
+	T length()
+	{
+		return size;
+	}
+	T &operator[](int i)
+	{
+		return ptr[i];
+	}
+};
+
+template <typename T>
+CArray<T>::CArray(int s) : size(s)
+{
+	if (s == 0)
+		ptr = NULL;
+	else
+		ptr = new T[s];
+}
+
+template <typename T>
+CArray<T>::CArray(CArray &a)
+{
+	if (!a.ptr)
+	{
+		ptr = NULL;
+		size = 0;
+		return;
+	}
+	ptr = new T[a.size];
+	memcpy(ptr, a.ptr, sizeof(T)*a.size);
+	size = a.size;
+}
+
+template <class T>
+
+CArray<T>::~CArray()
+{
+	if (pyr)
+		delete[] ptr;
+}
+
+template<class T>
+CArray<T> &CArray<T>::operator=(const)
