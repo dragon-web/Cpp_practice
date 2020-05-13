@@ -73,7 +73,6 @@ int main(int argc, char* argv)
 	system("pause");
 	return 0;
 }
-*/
 
 #include<iterator>
 #include<iostream>
@@ -145,3 +144,6 @@ int main()
 	system("pause");
 	return 0;
 }
+*/
+
+
