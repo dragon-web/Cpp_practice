@@ -17,7 +17,7 @@ int main()
 	system("pause");
 	return 0;
 }
-*/
+
 
 /*
 #include<iostream>
@@ -37,3 +37,11 @@ int main()
 	return 0;
 }
 */
+using namespace std;
+int main()
+{
+	int a = 1 & 2 & 3 || 4;
+	cout << a << endl;
+	system("pause");
+	return 0;
+}
