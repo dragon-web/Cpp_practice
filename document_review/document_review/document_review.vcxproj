@@ -20,7 +20,7 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{B803C9C0-A4ED-49D3-9A8C-8BDA4AF073AE}</ProjectGuid>
+    <ProjectGuid>{DC197213-5243-4465-9EBD-EE6FC237F22B}</ProjectGuid>
     <RootNamespace>documentreview</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
@@ -115,10 +115,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="common.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="document_review.c" />
+    <ClCompile Include="document_review.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
