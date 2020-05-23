@@ -92,7 +92,9 @@ void huffmanCoding(char* HuffCode[],HuffNode huffTree[],int n)//Õâ¸önÊÇ¹ş·òÂü±àÂ
 	}
 	delete temp;
 }
+
 /*
+
 int main()
 {
 	int num = 3;
@@ -107,16 +109,16 @@ int main()
 	system("pause");
 	return 0;
 }
+
+
 */
-
-
 
 
 
 
 //¹ş·òÂüÊ÷µÄ¹¹½¨Ã»ÓĞÎÊÌâ
 
-/*int main()
+int main()
 {
 	//A B CµÄ³öÏÖ´ÎÊıÊÇ1 2 5
 	int num = 3;
@@ -139,7 +141,8 @@ int main()
 	return 0;
 }
 
-*/
+
+
 
 /*
 int temp;
@@ -170,8 +173,8 @@ int main()
 	return 0;
 }
 
-
-
+*/
+/*
 int temp;
 int main()
 {
@@ -220,8 +223,11 @@ int main()
 	system("pause");
 	return 0;
 }
+
 */
 
+
+/*
 int main()
 {
 	int a = 1 && 2 && 3||4;
@@ -230,3 +236,4 @@ int main()
 	system("pause");
 	return 0;
 }
+*/
