@@ -138,7 +138,7 @@ char str[80];
 fgets(str, 15, fp);
 */
 //文件拷贝
-void copy(char fileS[], char fileT[]);//函数声明，文件拷贝
+/*void copy(char fileS[], char fileT[]);//函数声明，文件拷贝
 
 int main()
 {
@@ -173,4 +173,47 @@ void copy(char fileS[], char fileT[])
 	fclose(fpSource);
 	fclose(fpTarget);
 	printf("文件复制成功");
+
+}*/
+
+//二进制文件的写入
+
+void saveToFile(struct studentType stud[], int num)
+{
+	FILE * fp;
+	int i;
+	if ((fp = fopen("stu.dat", "wb")) == NULL)
+	{
+		printf("cannot open file");
+		return;
+	}
+	for (i = 0; i < num; i++)
+	{
+		if (fwrite(&stud[i], sizeof(struct studentType), 1, fp) != 1)
+		{
+			printf("file write error\n");
+		}
+	}
+	fclose(fp);
+}
+
+
+void readFromFile()
+{
+	struct studentType stud[];
+	int i;
+	FILE* fp;
+	if ((fp = fopen("stu.dat", "rb")) == NULL)
+	{
+		printf("cannot open file");
+		return ;
+	}
+	while (!feof(fp))
+	{
+		if (fread(&student, sizeof(struct studentType), 1, fp) == 1)
+		{
+			printf("%-10s%4d,%4d%-15s\n", student.name, student.num, student.age, student.addr);
+		}
+	}
+	fclose fp;
 }
