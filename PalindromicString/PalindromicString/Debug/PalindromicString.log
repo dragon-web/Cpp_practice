@@ -1,0 +1,5 @@
+﻿  PalindromicString.cpp
+c:\users\飞龙\desktop\cpp_practice\palindromicstring\palindromicstring\palindromicstring.cpp(116): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\飞龙\desktop\cpp_practice\palindromicstring\palindromicstring\palindromicstring.cpp(121): warning C4018: “<”: 有符号/无符号不匹配
+c:\users\飞龙\desktop\cpp_practice\palindromicstring\palindromicstring\palindromicstring.cpp(126): warning C4018: “<”: 有符号/无符号不匹配
+  PalindromicString.vcxproj -> C:\Users\飞龙\Desktop\Cpp_practice\PalindromicString\Debug\PalindromicString.exe
