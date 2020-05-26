@@ -1,7 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 
-// BinaryTreeAction.cpp : 定义控制台应用程序的入口点。
-//
-// 使用的库定义
+
 #include < stdio.h >
 #include < stdlib.h >
 #include < string.h >
@@ -1018,7 +1016,7 @@ void DisplayBinaryTreeNodeBrothers(BiTreePtr Root, char NodeData)
 }
 
 // 显示二叉树中给定结点的祖先结点 ...
-// ( 本函数要求同学实现 )
+
 void DisplayBinaryTreeNodeAncestors(BiTreePtr Root, char NodeData)
 {
 		SeqBiTreePtrStack s;
@@ -1060,14 +1058,6 @@ void DisplayBinaryTreeNodeAncestors(BiTreePtr Root, char NodeData)
 			puts("");
 		}
 }
-
-//////////////////////////////////////////////////////////////////////////////
-
-// ######################################################################## //
-//                                                                          // 
-//                             下面是主程序的实现                              // 
-//                                                                          // 
-// ######################################################################## //
 
 int main()
 {

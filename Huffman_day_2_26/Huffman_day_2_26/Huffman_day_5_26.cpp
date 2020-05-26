@@ -326,7 +326,6 @@ void HuffmanEncoding(char *OrigMsg, char *EncodingMsg, int NumOfCharSet, Huffman
 }
 
 // Huffman 解码 ...
-// ( 本函数要求同学实现 )
 void HuffmanDecoding(char *EncodingMsg, char *OrigMsg, int NumOfCharSet, HuffmanTreeNode *HuffmanTree, HuffmanCodeNode *HuffmanCodeBook)
 {
 
