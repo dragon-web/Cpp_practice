@@ -20,7 +20,7 @@ typedef struct HuffmanTreeNode  //自定义结构体类型
 }HuffmanTreeNode;
 
 // 信源符号集合( 欲编码和压缩的消息必须由下面字符组成 ) ...
-const char *MSG_BASE_CHAR_SET = "ABCDE";
+const char *MSG_BASE_CHAR_SET = "ABCDE";   
 
 // 编码表中的单个编码的结构体类型定义 ...
 typedef struct HuffmanCodeNode
@@ -28,12 +28,13 @@ typedef struct HuffmanCodeNode
 	char BaseChar;          // 信源符号 ...
 	char HuffmanCode[20]; // 信源符号对应的 'Huffman' 编码 ...
 }HuffmanCodeNode;
+//根据频度编码的
 
 
 
 
-void DisplayMsg(char *Title, char *Msg);
-void DisplayHuffmanCodeBook(HuffmanCodeNode *HuffmanCodeBook, int NumOfCharSet);
+void DisplayMsg(char *Title, char *Msg); //展示函数
+void DisplayHuffmanCodeBook(HuffmanCodeNode *HuffmanCodeBook, int NumOfCharSet); //哈夫曼书表
 void FindTwoMinWeights(HuffmanTreeNode *HuffmanTree, int N, int *k1, int *k2);//weight 权重
 void CountEncodingMsgCharFrequency(char *Msg, float *pCharFreq, int NumOfCharSet);//统计编码信息中信源字符频度
 void HuffmanEncoding(char *OrigMsg, char *EncodingMsg, int NumOfCharSet, HuffmanTreeNode *HuffmanTree, HuffmanCodeNode *HuffmanCodeBook);
@@ -338,7 +339,7 @@ void HuffmanDecoding(char *EncodingMsg, char *OrigMsg, int NumOfCharSet, Huffman
 {
 	size_t len = strlen(EncodingMsg) - 1;  // #
 	int root_Index = 0;
-	while (HuffmanTree[root_Index].Parent != -1)
+	while (HuffmanTree[root_Index].Parent != -1)//不是根
 	{
 		root_Index++;
 	}
@@ -354,7 +355,7 @@ void HuffmanDecoding(char *EncodingMsg, char *OrigMsg, int NumOfCharSet, Huffman
 			p = HuffmanTree[p].RChild;
 		if (HuffmanTree[p].LChild == -1 && HuffmanTree[p].RChild == -1)
 		{
-			*OrigMsg++ = MSG_BASE_CHAR_SET[p];
+			*OrigMsg++ = MSG_BASE_CHAR_SET[p];  //ABCDE
 			p = root_Index;
 		}
 
@@ -402,7 +403,6 @@ int main()
 	while (!IsStop)
 	{
 		fflush(stdin); // 清空缓冲区 ...
-
 		// 读入待编码字符串 ...
 		printf("\n\t请输入待编码字符串 : ");
 		scanf("%s", OrigMsg);
