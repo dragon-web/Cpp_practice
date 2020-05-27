@@ -61,17 +61,16 @@ int  PopStack(SeqBiTreePtrStack *S, BiTreePtr *x);
 int  GetStackTopElem(SeqBiTreePtrStack *S, BiTreePtr *x);
 
 // 循环队列( 二叉树节点指针类型 )的操作及实现 ...
-void InitQueue(SeqBiTreePtrQueue *Q);
+void InitQueue(SeqBiTreePtrQueue *Q);//初始化
 int  IsQueueEmpty(SeqBiTreePtrQueue *Q);
 int  IsQueueFull(SeqBiTreePtrQueue *Q);
 int  EnterQueue(SeqBiTreePtrQueue *Q, BiTreePtr x);
 int  LeaveQueue(SeqBiTreePtrQueue *Q, BiTreePtr *x);
 int  GetQueueFrontElem(SeqBiTreePtrQueue *Q, BiTreePtr *x);
-
 // 二叉树的建立和销毁 ...
 BiTreePtr CreateBinaryTree(void);
 void DestroyBinaryTree(BiTreePtr Root);
-
+//注释好
 // 二叉树的遍历 ...
 void RE_PreOrderBinaryTree(BiTreePtr Root);
 void PreOrderBinaryTree(BiTreePtr Root);
@@ -97,7 +96,7 @@ int  AddBinaryTreeNodeChild(BiTreePtr Root, char NodeData, char ChildData);
 int  DeleteBinaryTreeNode(BiTreePtr Root, char NodeData);
 int  UpdateBinaryTreeNode(BiTreePtr Root, char NodeData, char NewData);
 void DisplayBinaryTreeNodeBrothers(BiTreePtr Root, char NodeData);
-void DisplayBinaryTreeNodeAncestors(BiTreePtr Root, char NodeData);
+void DisplayBinaryTreeNodeAncestors(BiTreePtr Root, char NodeData);//
 
 //////////////////////////////////////////////////////////////////////////////
 
@@ -301,6 +300,7 @@ void PreOrderBinaryTree(BiTreePtr Root)
 				IsStop = TRUE;
 			}
 		}
+		//F10
 
 		// 退出上述循环则表明左孩子为空, 弹栈开始访问右孩子 ...
 		if (!IsStop)
