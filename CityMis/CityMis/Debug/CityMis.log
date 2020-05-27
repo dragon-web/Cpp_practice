@@ -1,6 +1,6 @@
 ﻿  CityMIS（上机用版本）.cpp
-c:\users\飞龙\desktop\数据结构\citymis（上机用版本）.cpp(195): warning C4474: printf: 格式字符串中传递的参数太多
-  c:\users\飞龙\desktop\数据结构\citymis（上机用版本）.cpp(195): note: 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
-c:\users\飞龙\desktop\数据结构\citymis（上机用版本）.cpp(284): warning C4474: printf: 格式字符串中传递的参数太多
-  c:\users\飞龙\desktop\数据结构\citymis（上机用版本）.cpp(284): note: 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
+c:\users\飞龙\desktop\数据结构\citymis（上机用版本）.cpp(189): warning C4474: printf: 格式字符串中传递的参数太多
+  c:\users\飞龙\desktop\数据结构\citymis（上机用版本）.cpp(189): note: 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
+c:\users\飞龙\desktop\数据结构\citymis（上机用版本）.cpp(278): warning C4474: printf: 格式字符串中传递的参数太多
+  c:\users\飞龙\desktop\数据结构\citymis（上机用版本）.cpp(278): note: 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
   CityMis.vcxproj -> C:\Users\飞龙\Desktop\Cpp_practice\CityMis\Debug\CityMis.exe
