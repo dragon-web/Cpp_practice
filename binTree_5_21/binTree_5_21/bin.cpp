@@ -21,7 +21,7 @@ typedef struct BiTreeNode
 }BiTreeNode, *BiTreePtr;
 
 // 二叉树中孩子结点类型 ...
-enum BiTreeChildType
+enum BiTreeChildType  //枚举类型
 {
 	btLeftChild,   // 左孩子 ...
 	btRightChild,  // 右孩子 ...
@@ -783,7 +783,7 @@ int CalcBinaryTreeHeight(BiTreePtr Root)
 // 计算二叉树的度 ...
 // ( 本函数要求同学实现 )
 //计算出叶子节点的个数
-int leaf(BiTreePtr T, int &count)//count 起计数作用 
+int leaf(BiTreePtr T, int &count)//count 起计数作用  度为0
 {
 	if (T == NULL) //跳出递归条件 
 		return 0;
@@ -796,7 +796,7 @@ int leaf(BiTreePtr T, int &count)//count 起计数作用
 int degree1(BiTreePtr T, int &count)
 {
 	if (T == NULL)
-		return;
+		return FALSE;
 	if ((T->LChild== NULL && T->RChild != NULL) || (T->LChild == NULL && T->RChild != NULL))
 		count++;
 	degree1(T->LChild, count);
@@ -807,7 +807,7 @@ int degree1(BiTreePtr T, int &count)
 int degree2(BiTreePtr T, int &count)
 {
 	if (T == NULL)
-		return;
+		return false;
 	if (T->LChild!= NULL && T->RChild != NULL)
 		count++;
 	degree2(T->LChild, count);
@@ -818,7 +818,7 @@ int CalcBinaryTreeDegree(BiTreePtr Root)
 {
 	//算法统计度为1或者度为2的节点个数
 	if (Root == NULL)
-		return false;
+		return 0;
 	else
 	{
 		int count1 = 0;
@@ -920,48 +920,56 @@ int AddBinaryTreeNodeChild(BiTreePtr Root, char NodeData, char ChildData)
 	return OK;
 }
 
+
 // 在二叉树中删除结点( 同时删除该结点对应的所有子结点 ) ...
-// ( 本函数要求同学实现 )
-int DeleteBinaryTreeNode(BiTreePtr Root, char NodeData) //
+/*int DeleteBinaryTreeNode(BiTreePtr Root, char NodeData) //  按照值删除节点
 {
 	if (Root == NULL)
 	{
 		return false;
 	}
-	else if (NodeData < (*Root).Data)
-		DeleteBinaryTreeNode(((Root)->LChild), NodeData);
-	else if (NodeData > (*Root).Data)
-		DeleteBinaryTreeNode(((Root)->RChild), NodeData);
+	BiTreePtr p = FindBinaryTreeNode(Root, NodeData);
+	BiTreePtr q = p;
+	while (p->LChild != NULL || p->RChild != NULL)
+	{
+		while (p->LChild != NULL)
+		{
+			p = p->LChild;   //找到左边叶子节点
+		}
+		while (p->RChild != NULL)
+		{
+			p = p->RChild;
+		}
+	}
+	q->Data = p->Data;
+	p = NULL;
+	return true;
+}*/
+int DeleteBinaryTreeNode(BiTreePtr Root, char NodeData) //  按照值删除节点
+{
+	if (Root == NULL)
+	{
+		return false;
+	}
+	BiTreePtr p = FindBinaryTreeNode(Root, NodeData);
+	BiTreePtr q = p;
+	if (p == NULL)
+	{
+		printf("没有找到该节点");
+		return 0;
+	}
 	else
 	{
-		BiTreePtr p= Root;
-		if (p->LChild == NULL && p->RChild == NULL)
+		p = p->Parent;
+		if (p->LChild == q)
 		{
-			free(p);
-			Root = NULL;
-		}
-		else if (p->LChild != NULL && p->RChild == NULL)
-		{
-			p = Root;
-			Root = p->LChild;
-			free(p);
-		}
-		else if (p->LChild == NULL && p->RChild != NULL)
-		{
-			p = Root;
-			Root = p->RChild;
-			free(p);
+			p->LChild = NULL;
 		}
 		else
-		{
-			p = Root->LChild;
-			while (p->RChild != NULL)
-				p = p->RChild;
-			Root->Data = p->Data;
-			DeleteBinaryTreeNode(((Root)->LChild),p->Data);
-		}
-		return true;
+		p->RChild = NULL;
 	}
+
+
 }
 
 // 修改二叉树中结点的值 ...
@@ -1017,46 +1025,44 @@ void DisplayBinaryTreeNodeBrothers(BiTreePtr Root, char NodeData)
 
 // 显示二叉树中给定结点的祖先结点 ...
 
+/*BiTreePtr DisplayBinaryTreeNodeAncestors(BiTreePtr Root, char NodeData)
+{
+	if (Root->Data == NodeData)
+		return NULL;
+	if (Root->LChild->Data == NodeData || Root->RChild->Data == NodeData)
+		return Root;
+	BiTreePtr p = DisplayBinaryTreeNodeAncestors(Root->LChild, NodeData);
+	if (p != NULL)
+	{
+		return p;
+	}
+	return DisplayBinaryTreeNodeAncestors(Root->RChild, NodeData);
+}*/
 void DisplayBinaryTreeNodeAncestors(BiTreePtr Root, char NodeData)
 {
-		SeqBiTreePtrStack s;
-		BiTreeNode q;
-		BiTreePtr p = Root;
-		char x;
-		printf("输入查找的节点:");
-		scanf("%c", &x);
-		InitStack(&s);
-		while (p || !IsStackEmpty(&s))
+	BiTreePtr p = Root;
+	if (Root->Data == NodeData)
+	{
+		printf("该节点为根节点，无祖先节点");
+		return;
+	}
+	else
+	{
+		BiTreePtr res = FindBinaryTreeNode(Root, NodeData);
+		if (res == NULL)
 		{
-			if (p) {
-				q.flag = 0;//没有访问右孩子
-				q.Data = p;
-				pushStack(s, q);//压栈
-				p = p->lchild;
-			}
-			else {
-				outStack(s, &q);
-				p = q.data;
-				if (q.flag == 0) {
-					q.flag = 1;//访问了右孩子
-					pushStack(s, q);
-					p = p->rchild;
-				}
-				else {
-					if (p->data == x)break;
-					p = NULL;//没找到节点，返回到上一节点
-				}
+			printf("无该节点");
+		}
+		else
+		{
+			while (res != Root)
+			{
+				res = res->Parent;
+				printf("%c ", res->Data);
 			}
 		}
-		if (emptyStack(s))printf("找不到该节点的祖先！");
-		else {
-			printf("%c的祖先:", x);
-			while (!emptyStack(s)) {
-				outStack(s, &q);
-				printf("%c", q.Data);
-			}
-			puts("");
-		}
+
+	}
 }
 
 int main()
@@ -1077,7 +1083,7 @@ int main()
 		Root = CreateBinaryTree();
 
 		// 遍历二叉树, 设置每个结点指向父结点的指针域 ...
-		SetBinaryTreeParent(Root);
+				SetBinaryTreeParent(Root);
 
 		// 二叉树的遍历 ...
 		printf("\n\t二叉树的前序遍历( 递归方式 )为 : ");
@@ -1201,8 +1207,6 @@ int main()
 		printf("\n\n\t请输入待查找的结点数据 : ");
 		scanf("%s", UserInput);
 		DisplayBinaryTreeNodeAncestors(Root, UserInput[0]);
-
-		// 释放二叉树空间 ...
 		DestroyBinaryTree(Root);
 
 		printf("\n\n");

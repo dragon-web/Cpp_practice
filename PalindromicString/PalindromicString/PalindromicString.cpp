@@ -7,7 +7,7 @@
 
 
 
-#define STACK_SIZE 100
+#define STACK_SIZE 100 //栈空间  100 
 #define TRUE       1
 #define FALSE      0
 
@@ -21,11 +21,11 @@ typedef struct
 
 
 // 顺序栈( 字符型 )的操作及实现 ...
-void InitStack(SeqCharStack *S);
-int  IsStackEmpty(SeqCharStack *S);
+void InitStack(SeqCharStack *S);//栈的初始化
+int  IsStackEmpty(SeqCharStack *S);//判断栈空
 int  IsStackFull(SeqCharStack *S);
-void  PushStack(SeqCharStack *S, char x);
-void  PopStack(SeqCharStack *S);
+void  PushStack(SeqCharStack *S, char x);//栈的插入
+void  PopStack(SeqCharStack *S);//栈的删去顶端元素
 char TopStack(SeqCharStack *S);//取栈顶元素
 int IsPalindromicString(char *s);
 

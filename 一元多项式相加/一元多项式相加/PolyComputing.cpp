@@ -216,6 +216,11 @@ void AddPoly(PolyList PolyA_Head, PolyList PolyB_Head)
 		{
 			r = p; // 'r' 指针总是指向 'p' 的前一个节点 ...
 			p = p->next;//相当于是实现了这个指针在链表上的移动
+			if (p->next == NULL && q->next == NULL)
+			{
+				p->next = q;
+				q = q->next;
+			}
 		}
 		else if (p->Exp == q->Exp)
 		{

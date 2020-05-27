@@ -1,16 +1,17 @@
 #define _CRT_SECURE_NO_WARNINGS 
 
-// 使用的库定义
 #include < stdio.h >
 #include < stdlib.h >
 #include < string.h >
 #include<windows.h>
 
+
 #define TRUE  1
 #define FALSE 0
 
+
 // 哈夫曼树( Huffman Tree ) 中节点的结构体类型定义( 静态三叉链表 ) ...
-typedef struct HuffmanTreeNode
+typedef struct HuffmanTreeNode  //自定义结构体类型
 {
 	float Weight; // 权重值 ...
 	int   Parent; // 父结点在数组中的下表( 因为是静态三叉链表 ) ...
@@ -28,33 +29,22 @@ typedef struct HuffmanCodeNode
 	char HuffmanCode[20]; // 信源符号对应的 'Huffman' 编码 ...
 }HuffmanCodeNode;
 
-//////////////////////////////////////////////////////////////////////////////
 
-// ######################################################################## //
-//                                                                          // 
-//                            下面是各个函数定义                               // 
-//                                                                          // 
-// ######################################################################## //
+
 
 void DisplayMsg(char *Title, char *Msg);
 void DisplayHuffmanCodeBook(HuffmanCodeNode *HuffmanCodeBook, int NumOfCharSet);
-void FindTwoMinWeights(HuffmanTreeNode *HuffmanTree, int N, int *k1, int *k2);
+void FindTwoMinWeights(HuffmanTreeNode *HuffmanTree, int N, int *k1, int *k2);//weight 权重
 void CountEncodingMsgCharFrequency(char *Msg, float *pCharFreq, int NumOfCharSet);//统计编码信息中信源字符频度
 void HuffmanEncoding(char *OrigMsg, char *EncodingMsg, int NumOfCharSet, HuffmanTreeNode *HuffmanTree, HuffmanCodeNode *HuffmanCodeBook);
 void HuffmanDecoding(char *EncodingMsg, char *OrigMsg, int NumOfCharSet, HuffmanTreeNode *HuffmanTree, HuffmanCodeNode *HuffmanCodeBook);
 
-//////////////////////////////////////////////////////////////////////////////
 
-// ######################################################################## //
-//                                                                          // 
-//                           下面是各个函数的实现                               // 
-//                                                                          // 
-// ######################################################################## //
 
 // 显示字符串( 以 '#' 结尾 ) ...
 void DisplayMsg(const char *Title, char *Msg)
 {
-	int k;
+	size_t k;
 
 	if (strlen(Title) > 0)
 		printf("\n\n\t%s", Title);
@@ -67,6 +57,8 @@ void DisplayMsg(const char *Title, char *Msg)
 			printf("%c", *Msg);
 			Msg++;
 		}
+		else
+			*(Msg + 1) = '\0';
 	}
 
 	printf("\n");
@@ -88,7 +80,6 @@ void DisplayHuffmanCodeBook(HuffmanCodeNode *HuffmanCodeBook, int NumOfCharSet)
 
 	printf("\n");
 }
-
 // 从生成哈夫曼树的权值表中找出权值最小的 2 个根节点序号 ...
 void FindTwoMinWeights(HuffmanTreeNode *HuffmanTree, int N, int *k1, int *k2)
 {
@@ -325,26 +316,71 @@ void HuffmanEncoding(char *OrigMsg, char *EncodingMsg, int NumOfCharSet, Huffman
 	free(pMsgCharFrequency);
 }
 
-// Huffman 解码 ...
+// Huffman 解码 ... //遇到1往右走，遇到0往左走
+/*void HuffmanDecoding(char *EncodingMsg, char *OrigMsg, int NumOfCharSet, HuffmanTreeNode *HuffmanTree, HuffmanCodeNode *HuffmanCodeBook)
+{
+	size_t length = strlen(EncodingMsg);
+	int root_index = 0;
+	while (HuffmanTree[root_index].Parent != -1)
+	{
+		root_index++;
+	}
+	char decoded_text[100];
+	int cur = 0;
+	int j = 0;
+	while (j < length)
+	{ 
+		HuffmanTreeNode* p = 
+	}
+
+}*/
 void HuffmanDecoding(char *EncodingMsg, char *OrigMsg, int NumOfCharSet, HuffmanTreeNode *HuffmanTree, HuffmanCodeNode *HuffmanCodeBook)
 {
+	size_t len = strlen(EncodingMsg) - 1;  // #
+	int root_Index = 0;
+	while (HuffmanTree[root_Index].Parent != -1)
+	{
+		root_Index++;
+	}
 
-	
+	char code;
+	int p = root_Index;
+	for (int i = 0; i < len; ++i)
+	{
+		code = EncodingMsg[i];
+		if (code == '0')
+			p = HuffmanTree[p].LChild;
+		else
+			p = HuffmanTree[p].RChild;
+		if (HuffmanTree[p].LChild == -1 && HuffmanTree[p].RChild == -1)
+		{
+			*OrigMsg++ = MSG_BASE_CHAR_SET[p];
+			p = root_Index;
+		}
 
-
-
-
-
+	}
+	/*
+	int cur = 0;//写入数组的当前位置
+	int j = 0;
+	while (j < len)
+	{
+		int p = root_Index;//读到叶子节点结束
+		while (HuffmanTree[p].LChild != -1 || HuffmanTree[p].RChild != -1)
+		{
+			char code = EncodingMsg[j++];
+			if (code == '0')
+			{
+				p = HuffmanTree[p].LChild;
+			}
+			else
+			{
+				p = HuffmanTree[p].RChild;
+			}
+		}
+		cur++;
+	}
+	*/
 }
-
-//////////////////////////////////////////////////////////////////////////////
-
-// ######################################################################## //
-//                                                                          // 
-//                             下面是主程序的实现                              // 
-//                                                                          // 
-// ######################################################################## //
-
 int main()
 {
 	int  IsStop;
@@ -352,6 +388,8 @@ int main()
 	int  NumOfCharSet;
 	char OrigMsg[100];     // 待编码的字符串 ...
 	char EncodingMsg[100]; // 编码结果 ...
+
+	char buffer[100] = { 0 };
 
 	HuffmanTreeNode *HuffmanTree;  // Huffman Tree ...
 	HuffmanCodeNode *HuffmanCodeBook; // Huffman 编码表 ...
@@ -388,10 +426,11 @@ int main()
 					DisplayMsg("< 编码信息 > ", EncodingMsg);
 
 					// 进行 'Huffman' 解码 ...
-					HuffmanDecoding(EncodingMsg, OrigMsg, NumOfCharSet, HuffmanTree, HuffmanCodeBook);
+					HuffmanDecoding(EncodingMsg, buffer, NumOfCharSet, HuffmanTree, HuffmanCodeBook);
 
 					// 输出解码结果 ...
-					DisplayMsg("< 解码信息 > ", OrigMsg);
+					//DisplayMsg("< 解码信息 > ", OrigMsg);
+					printf("< 解码信息 >  : %s\n", buffer);
 
 					// 释放空间 ...
 					free(HuffmanCodeBook);
@@ -418,5 +457,3 @@ int main()
 	system("PAUSE");
 	return 0;
 }
-
-//////////////////////////////////////////////////////////////////////////////

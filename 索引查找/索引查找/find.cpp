@@ -173,14 +173,14 @@ KeyPosRecord IndexSearch(int Key, int *pData, BlockIndexRecord *pBlock, int RecN
 	{
 		j = pBlock[k].Start;
 		KeyPos.BlockNo = k+1;
-		while (j < pBlock[k].End)
+		while (j <= pBlock[k].End)
 		{
 			if (Key == pData[j])
 				break;
 			else
 				j++;
 		}
-		if (j >= pBlock[k].End)
+		if (j > pBlock[k].End)
 		{
 			KeyPos.Pos = 0;
 		}
