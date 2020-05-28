@@ -89,11 +89,11 @@ void CountBinaryTreeNodeNum(BiTreePtr Root);
 void DisplayBinaryTreeLeafNode(BiTreePtr Root);
 int  CountBinaryTreeLeafNodeNum(BiTreePtr Root);
 int  CalcBinaryTreeHeight(BiTreePtr Root);
-int  CalcBinaryTreeDegree(BiTreePtr Root);
+int  CalcBinaryTreeDegree(BiTreePtr Root);//
 void DisplayBinaryTreePath(BiTreePtr Root);
 void DisplayBinaryTreeFather(BiTreePtr Root, char NodeData);
 int  AddBinaryTreeNodeChild(BiTreePtr Root, char NodeData, char ChildData);
-int  DeleteBinaryTreeNode(BiTreePtr Root, char NodeData);
+int  DeleteBinaryTreeNode(BiTreePtr Root, char NodeData);//
 int  UpdateBinaryTreeNode(BiTreePtr Root, char NodeData, char NewData);
 void DisplayBinaryTreeNodeBrothers(BiTreePtr Root, char NodeData);
 void DisplayBinaryTreeNodeAncestors(BiTreePtr Root, char NodeData);//
@@ -1049,7 +1049,7 @@ void DisplayBinaryTreeNodeAncestors(BiTreePtr Root, char NodeData)
 	else
 	{
 		BiTreePtr res = FindBinaryTreeNode(Root, NodeData);
-		if (res == NULL)
+		if (res == NULL)  ///没找到
 		{
 			printf("无该节点");
 		}

@@ -1,0 +1,4 @@
+﻿  bin.cpp
+c:\users\飞龙\desktop\cpp_practice\bintree_5_21\bintree_5_21\bin.cpp(838): warning C4715: “CalcBinaryTreeDegree”: 不是所有的控件路径都返回值
+c:\users\飞龙\desktop\cpp_practice\bintree_5_21\bintree_5_21\bin.cpp(974): warning C4715: “DeleteBinaryTreeNode”: 不是所有的控件路径都返回值
+  binTree_5_21.vcxproj -> C:\Users\飞龙\Desktop\Cpp_practice\binTree_5_21\Debug\binTree_5_21.exe
