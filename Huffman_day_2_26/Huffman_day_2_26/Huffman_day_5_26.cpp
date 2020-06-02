@@ -358,7 +358,6 @@ void HuffmanDecoding(char *EncodingMsg, char *OrigMsg, int NumOfCharSet, Huffman
 			*OrigMsg++ = MSG_BASE_CHAR_SET[p];  //ABCDE
 			p = root_Index;
 		}
-
 	}
 	/*
 	int cur = 0;//写入数组的当前位置
