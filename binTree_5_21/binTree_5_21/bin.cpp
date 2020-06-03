@@ -761,7 +761,8 @@ int CountBinaryTreeLeafNodeNum(BiTreePtr Root)
 // 计算二叉树的高度( 深度 ) ...
 int CalcBinaryTreeHeight(BiTreePtr Root)
 {
-	int LHeight, RHeight; // 左子树和右子树的高度( 深度 ) ...
+	int LHeight = 0;
+		int RHeight = 0; // 左子树和右子树的高度( 深度 ) ...
 
 	// 空树 ...
 	if (Root == NULL)
@@ -1064,6 +1065,35 @@ void DisplayBinaryTreeNodeAncestors(BiTreePtr Root, char NodeData)
 
 	}
 }
+int findMaxLoad(BiTreePtr Root)
+{
+	int LHeight = 0;
+	int RHeight = 0; // 左子树和右子树的高度( 深度 ) ...
+
+// 空树 ...
+	if (Root == NULL)
+		return 0;
+
+	// 计算左子树的高度( 深度 ) ...
+	LHeight = CalcBinaryTreeHeight(Root->LChild);
+
+	// 计算右子树的高度( 深度 ) ...
+	RHeight = CalcBinaryTreeHeight(Root->RChild);
+
+	// 返回值 ...
+	return LHeight + RHeight;
+}
+
+int findMaxLoad_value(BiTreePtr Root)
+{
+	if (Root == NULL)
+	{
+		return 0;
+	}
+	
+}
+
+
 
 int main()
 {
@@ -1110,9 +1140,12 @@ int main()
 		printf("\n\t二叉树的层序遍历( 非递归方式 )为 : ");
 		LevelOrderBinaryTree(Root);
 		printf("\n\n");
-
+		//寻找最大通路径长度
+		int p = findMaxLoad(Root);
+		printf("%d\n", p+1);
+		//寻找最大通路
 		// 访问二叉树中的各个结点 ...
-		printf("\n\t访问二叉树的各个结点为 : ");
+	/*	printf("\n\t访问二叉树的各个结点为 : ");
 		VisitBinaryTree(Root);
 		printf("\n\n");
 
@@ -1208,6 +1241,9 @@ int main()
 		scanf("%s", UserInput);
 		DisplayBinaryTreeNodeAncestors(Root, UserInput[0]);
 		DestroyBinaryTree(Root);
+		*/
+		
+
 
 		printf("\n\n");
 		printf("\n\t继续处理[ Y / N ] ?");
