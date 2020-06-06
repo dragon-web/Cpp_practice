@@ -3,7 +3,7 @@
 #include<iostream>
 #include<string>
 using namespace std;
-
+/*
 class A
 {
 public:
@@ -24,7 +24,6 @@ public:
 	}
 	const char* ss;
 };
-
 int main()
 {
 	A a1;
@@ -36,7 +35,7 @@ int main()
 	return 0;
 }
 
-/*
+
 
 class A
 {
@@ -97,7 +96,7 @@ int main()
 		 system("pause");
 	     return 0;
  }
-
+ 
 
 class A
 {
@@ -125,4 +124,30 @@ int main()
 	system("pause");
 	return 0;
 }
- */
+*/
+
+class A
+{
+public:
+	A()
+	{
+
+	}
+	void setName(const string& s) //const 
+	{
+		ss = s.c_str();
+		cout << &ss << endl;
+	}
+	
+	const char* ss;
+};
+int main()
+{
+	A a1;
+	string tmp("anbcd");
+	a1.setName(tmp);
+	//a1.setName("anbcd");
+	cout << &a1.ss << endl;
+	cout << a1.ss << endl;
+	system("pause");
+}
