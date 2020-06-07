@@ -19,7 +19,7 @@ int main()
 		str.push_back(temp);
 		temp.clear();
 	}
-	auto it = str.begin();
+	auto it = str.begin();//指向那个string
 	while (it != str.end())
 	{
 		auto it1 = (*it).begin();
@@ -27,8 +27,11 @@ int main()
 		{
 			if (*it1 == ',')
 			{
-				(*it).insert((*it).begin(),'"');
+				auto qq = it1;
+				(*it).insert((*it).begin(), '"');//返回插入后迭代器的位置
 				(*it).insert((*it).end(), '"');
+				it1 = qq;
+				it1++;
 			}
 			it1++;
 		}
@@ -40,7 +43,22 @@ int main()
 		cout << (*p) << endl;
 		p++;
 	}
+	system("pause");
 	return 0;
 }
 
+/*
+int main()
+{
+	string a("assfa");
+	auto it = a.begin();
+	while (it != a.end())
+	{
+		cout << *it << endl;
+		it++;
+	}
+	system("pause");
+	return 0;
+}
+*/
 
