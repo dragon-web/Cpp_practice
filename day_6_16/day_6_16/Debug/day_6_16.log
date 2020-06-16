@@ -1,0 +1,15 @@
+﻿  day_6_16.cpp
+c:\users\飞龙\desktop\cpp_practice\day_6_16\day_6_16\day_6_16.cpp(85): error C4576: 后跟初始值设定项列表的带圆括号类型是一个非标准的显式类型转换语法
+c:\users\飞龙\desktop\cpp_practice\day_6_16\day_6_16\day_6_16.cpp(90): error C4576: 后跟初始值设定项列表的带圆括号类型是一个非标准的显式类型转换语法
+c:\users\飞龙\desktop\cpp_practice\day_6_16\day_6_16\day_6_16.cpp(95): error C4576: 后跟初始值设定项列表的带圆括号类型是一个非标准的显式类型转换语法
+c:\users\飞龙\desktop\cpp_practice\day_6_16\day_6_16\day_6_16.cpp(110): error C4576: 后跟初始值设定项列表的带圆括号类型是一个非标准的显式类型转换语法
+c:\users\飞龙\desktop\cpp_practice\day_6_16\day_6_16\day_6_16.cpp(294): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\飞龙\desktop\cpp_practice\day_6_16\day_6_16\day_6_16.cpp(295): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\飞龙\desktop\cpp_practice\day_6_16\day_6_16\day_6_16.cpp(299): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\飞龙\desktop\cpp_practice\day_6_16\day_6_16\day_6_16.cpp(300): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\飞龙\desktop\cpp_practice\day_6_16\day_6_16\day_6_16.cpp(338): error C4576: 后跟初始值设定项列表的带圆括号类型是一个非标准的显式类型转换语法
+c:\users\飞龙\desktop\cpp_practice\day_6_16\day_6_16\day_6_16.cpp(352): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\飞龙\desktop\cpp_practice\day_6_16\day_6_16\day_6_16.cpp(353): warning C4244: “=”: 从“double”转换到“int”，可能丢失数据
+c:\users\飞龙\desktop\cpp_practice\day_6_16\day_6_16\day_6_16.cpp(378): error C4996: 'getch': The POSIX name for this item is deprecated. Instead, use the ISO C and C++ conformant name: _getch. See online help for details.
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\ucrt\conio.h(453): note: 参见“getch”的声明
+c:\users\飞龙\desktop\cpp_practice\day_6_16\day_6_16\day_6_16.cpp(418): warning C4244: “参数”: 从“time_t”转换到“unsigned int”，可能丢失数据
