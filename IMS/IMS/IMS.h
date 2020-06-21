@@ -6,7 +6,7 @@ void keep()
 	printf("(按下任意键继续)\n");
 	getchar();
 }
-void menu()
+void menu()//菜单
 {
 	system("color 5");
 	printf("     ***********************************************************************        |\n");
@@ -28,7 +28,7 @@ Stu* stu;
 int n;
 int people = 0;
 
-int isEmpey() {
+int isEmpey() {    //判断文件是否为空
 	FILE *fp = fopen("input.CSV", "r");
 	if (fp == NULL) {
 		printf("文件打开失败");
@@ -42,13 +42,13 @@ int isEmpey() {
 }
 
 //第一个节点head不储存任何数据
-Stu* build() {
-	Stu *head = (Stu*)malloc(sizeof(Stu)), *tail = NULL, *p = NULL;
+Stu* build() {    //创建
+	Stu *head = (Stu*)malloc(sizeof(Stu)), *tail = NULL, *p = NULL;  
 	printf("请输入你要录入的学生个数：\n");
 	int n, i;
 	scanf("%d", &n);
 	people = n;
-	getchar();
+	getchar();//吸收一个回车
 	tail = head;
 	for (i = 1; i <= n; i++) {
 		p = (Stu*)malloc(sizeof(Stu));
@@ -94,7 +94,7 @@ Stu* buildbyfile() {
 	keep();
 	return head;
 }
-void save(Stu *stu) {
+void save(Stu *stu) {   
 	FILE *fp = fopen("input.CSV", "w");
 	if (fp == NULL) {
 		printf("文件打开失败");
@@ -111,7 +111,8 @@ void save(Stu *stu) {
 
 }
 
-void out(Stu*stu) {
+
+void out(Stu*stu) {  
 	stu = stu->next;
 	printf("学号\t姓名\t选修课程\t\t平时成绩\t实验成绩\t考试成绩\t总评成绩\n");
 	while (stu != NULL) {
@@ -121,7 +122,8 @@ void out(Stu*stu) {
 	keep();
 }
 
-void mydelete(Stu* stu) {
+void mydelete(Stu* stu)
+{
 	int  flag = 0;
 	char tid[20];
 	Stu *tail = stu;
@@ -131,14 +133,15 @@ void mydelete(Stu* stu) {
 	stu = stu->next;
 	while (stu != NULL) {
 		if (strcmp(stu->id, tid) == 0) {
+			temp = stu;
 			if (stu->next != NULL) {
 				stu = stu->next;
 				tail->next = stu;
-			}
-			//删除尾元素
+			}//删除不是尾元素
+			
 			else {
 				tail->next = NULL;
-			}
+			}//删除尾元素
 			flag = 1;
 			people--;
 			printf("删除成功\n");
@@ -146,17 +149,16 @@ void mydelete(Stu* stu) {
 			return;
 		}
 		tail = stu;
-		temp = stu;
 		stu = stu->next;
 	}
 	if (flag == 0) {
-		printf("删除失败，id为%s的学生不存在\n", tid);
+		printf("删除失败，id为%s的学生不存在\n", tid);  //消息树
 		keep();
 	}
 	return;
-
 }
-void myinsert(Stu *stu) {
+void myinsert(Stu *stu)  //在最后插入就行 
+{
 	stu = stu->next;
 	Stu *p = (Stu*)malloc(sizeof(Stu));
 
@@ -165,7 +167,7 @@ void myinsert(Stu *stu) {
 	}
 	printf("请输入你要插入的学生的学号：\n");
 	scanf("%s", p->id);
-	getchar();
+	getchar();//吸收一个回车
 	printf("请输入你要插入的学生的姓名：\n");
 	scanf("%s", p->name);
 	getchar();
@@ -553,9 +555,6 @@ void sortbyscore(Stu *stu) {
 void Recover_mis_delete(Stu *head)
 {
 	Stu *p = head;
-	while (p->next != NULL)
-	{
-		p = p->next;
-	}
-	p->next = temp;//将数据恢复在末尾
+	temp->next = p->next;
+	p->next = temp;//将数据恢复用头插
 }

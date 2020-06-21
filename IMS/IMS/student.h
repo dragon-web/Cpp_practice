@@ -13,10 +13,5 @@ struct student {
 };
 typedef struct student Stu;
 
-typedef struct StuList
-{
-	struct StuNode *first;
-	struct StuNode *last;
-	size_t sapce;
-}StuList;
+
 

@@ -1,6 +1,6 @@
 #include"IMS.h"
 
-
+// 
 int main()
 {
 	Stu* res = NULL;
@@ -32,9 +32,9 @@ int main()
 			system("cls");
 			break;
 		case 4:
-			system("cls");
+			system("cls");//清屏命令
 			mydelete(res);
-			_flushall();
+			_flushall();//清理内存缓冲区   scanf   回车
 			break;
 		case 5:
 			system("cls");
