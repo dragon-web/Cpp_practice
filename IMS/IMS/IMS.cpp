@@ -12,14 +12,14 @@ int main()
 		scanf("%d", &input);
 		switch (input)
 		{
+		case 0:
+			system("cls");
+			printf("退出学生管理系统\n");
+			break;
 		case 1:
 			system("cls");
 			res = build();
 			_flushall();
-			break;
-		case 0:
-			system("cls");
-			printf("退出学生管理系统\n");
 			break;
 		case 2:
 			change(res);
@@ -52,15 +52,10 @@ int main()
 			break;
 		case 8:
 			system("cls");
-			sortbyscore(res);
-			_flushall();
-			break;	
-		case 9:
-			system("cls");
 			buildbyfile();
 			_flushall();
 			break;
-		case 10:
+		case 9:
 			system("cls");
 			mysearch(res);
 			_flushall();

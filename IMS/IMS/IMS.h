@@ -18,9 +18,8 @@ void menu()//菜单
 	printf("|\t5.--删除信息恢复(只能恢复最后一次误删的数据)                                     |\n");
 	printf("|\t6.--学生信息显示                                                                 |\n");
 	printf("|\t7.--学生信息录入文件                                                             |\n");
-	printf("|\t8.--学生按成绩排序                                                              |\n");
-	printf("|\t9.--文件读取学生信息                                                             |\n");
-	printf("|\t10.--学生信息查询                                                                |\n");
+	printf("|\t8.--文件读取学生信息                                                             |\n");
+	printf("|\t9.--学生信息查询                                                                 |\n");
 	printf("|*******************************************************************************    |\n");
 	printf("|*******************************************************************************    |\n\n");
 }
@@ -452,106 +451,6 @@ void myswap(Stu *p, Stu *q) {
 	*q = buf;
 	return;
 }
-void quicksortbytest(Stu *p, int low, int high) {
-	int i = low;//low,high储存下来,递归需要用到。
-	int j = high;
-	Stu st = p[low];
-	int key = p[low].test;//快排比较基准数
-	if (low > high) {
-		return;
-	}
-	while (low < high)//顺序很重要 先从右边开始找
-	{
-		while (low < high && key >= p[high].test) {
-			high--;
-		}
-		while (low < high && key <= p[low].test) {
-			low++;
-		}
-		myswap(&p[low], &p[high]);
-	}
-	//哨兵low已经等于哨兵high , 处于中间
-	p[i] = p[low];
-	p[low] = st;
-	quicksortbytest(p, i, low - 1);//继续处理左边的，这是一个递归的过程
-	quicksortbytest(p, low + 1, j);//继续处理右边的，这是一个递归的过程
-}
-
-//快排同理
-void quicksortbysum(Stu *p, int low, int high) {
-	int i = low;//low,high储存下来,递归需要用到。
-	int j = high;
-	Stu st = p[low];
-	int key = p[low].sum;//快排比较基准数
-	if (low > high) {
-		return;
-	}
-	while (low < high)//顺序很重要 先从右边开始找
-	{
-		while (low < high && key >= p[high].sum) {
-			high--;
-		}
-		while (low < high && key <= p[low].sum) {
-			low++;
-		}
-		myswap(&p[low], &p[high]);
-	}
-	//哨兵low已经等于哨兵high , 处于中间
-	p[i] = p[low];
-	p[low] = st;
-	quicksortbysum(p, i, low - 1);//继续处理左边的，这是一个递归的过程
-	quicksortbysum(p, low + 1, j);//继续处理右边的，这是一个递归的过程
-}
-
-void sortbyscore(Stu *stu) {
-	int k;
-	stu = stu->next;
-	Stu* temp = stu;
-	int  i;
-	Stu *p = (Stu*)malloc(sizeof(Stu)*people);
-	stu = temp;
-	for (i = 0; i < people; i++) {
-		p[i].average = stu->average;
-		p[i].test = stu->test;
-		p[i].experiment = stu->experiment;
-		p[i].sum = stu->sum;
-		strcpy(p[i].id, stu->id);
-		strcpy(p[i].name, stu->name);
-		strcpy(p[i].course, stu->course);
-		stu = stu->next;
-	}
-	printf("请输入排序（从高到低）标准的序号:\n");
-	printf("1.考试成绩:\n");
-	printf("2.总评成绩:\n");
-	scanf("%d", &k);
-	switch (k) {
-	case 1:
-		quicksortbytest(p, 0, people - 1);
-		break;
-	case 2:
-		quicksortbysum(p, 0, people - 1);
-		break;
-	default:
-		printf("对不起，不存在这个排序选项。\n");
-		keep();
-		return;
-	}
-	stu = temp;
-	for (i = 0; i < people; i++) {
-		stu->average = p[i].average;
-		stu->test = p[i].test;
-		stu->experiment = p[i].experiment;
-		stu->sum = p[i].sum;
-		strcpy(stu->id, p[i].id);
-		strcpy(stu->name, p[i].name);
-		strcpy(stu->course, p[i].course);
-		stu = stu->next;
-	}
-	printf("排序完成，排序后的结果请使用主界面的2：浏览学生信息功能进行查看。\n");
-	keep();
-	return;
-}
-
 void Recover_mis_delete(Stu *head)
 {
 	Stu *p = head;
