@@ -1,7 +1,8 @@
 ﻿  bin.cpp
-c:\users\飞龙\desktop\cpp_practice\bintree_5_21\bintree_5_21\bin.cpp(1091): warning C4101: “NewData”: 未引用的局部变量
-c:\users\飞龙\desktop\cpp_practice\bintree_5_21\bintree_5_21\bin.cpp(1091): warning C4101: “ChildData”: 未引用的局部变量
-c:\users\飞龙\desktop\cpp_practice\bintree_5_21\bintree_5_21\bin.cpp(1091): warning C4101: “NodeData”: 未引用的局部变量
-c:\users\飞龙\desktop\cpp_practice\bintree_5_21\bintree_5_21\bin.cpp(838): warning C4715: “CalcBinaryTreeDegree”: 不是所有的控件路径都返回值
+c:\users\飞龙\desktop\cpp_practice\bintree_5_21\bintree_5_21\bin.cpp(1102): warning C4101: “NewData”: 未引用的局部变量
+c:\users\飞龙\desktop\cpp_practice\bintree_5_21\bintree_5_21\bin.cpp(1102): warning C4101: “ChildData”: 未引用的局部变量
+c:\users\飞龙\desktop\cpp_practice\bintree_5_21\bintree_5_21\bin.cpp(1102): warning C4101: “NodeData”: 未引用的局部变量
 c:\users\飞龙\desktop\cpp_practice\bintree_5_21\bintree_5_21\bin.cpp(974): warning C4715: “DeleteBinaryTreeNode”: 不是所有的控件路径都返回值
+c:\users\飞龙\desktop\cpp_practice\bintree_5_21\bintree_5_21\bin.cpp(1094): warning C4715: “findMaxLoad_value”: 不是所有的控件路径都返回值
+c:\users\飞龙\desktop\cpp_practice\bintree_5_21\bintree_5_21\bin.cpp(838): warning C4715: “CalcBinaryTreeDegree”: 不是所有的控件路径都返回值
   binTree_5_21.vcxproj -> C:\Users\飞龙\Desktop\Cpp_practice\binTree_5_21\Debug\binTree_5_21.exe
