@@ -17,45 +17,50 @@ int main()
 			printf("退出学生管理系统\n");
 			break;
 		case 1:
-			system("cls");
-			res = build();
+			res = Register_Student_Information();
 			_flushall();
+			system("cls");
 			break;
 		case 2:
-			change(res);
+			build_score(res,people);
 			_flushall();
 			system("cls");
 			break;
 		case 3:
-			myinsert(res);
+			change(res);
 			_flushall();
 			system("cls");
 			break;
 		case 4:
+			myinsert(res);
+			_flushall();
+			system("cls");
+			break;
+		case 5:
 			system("cls");//清屏命令
 			mydelete(res);
 			_flushall();//清理内存缓冲区   scanf   回车
 			break;
-		case 5:
+		case 6:
 			system("cls");
 			Recover_mis_delete(res);
 			_flushall();
 			break;
-		case 6:
+		case 7:
 			system("cls");
 			out(res);
 			break;
-		case 7:
+		case 8:
 			system("cls");
 			save(res);
 			_flushall();
 			break;
-		case 8:
+		case 9:
 			system("cls");
 			buildbyfile();
 			_flushall();
 			break;
-		case 9:
+		case 10:
 			system("cls");
 			mysearch(res);
 			_flushall();

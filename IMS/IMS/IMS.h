@@ -1,5 +1,6 @@
 #include"student.h"
 
+int people;
 Stu *temp = NULL;//用来保存误删的元素
 void keep() 
 {
@@ -11,21 +12,21 @@ void menu()//菜单
 	system("color 5");
 	printf("     ***********************************************************************        |\n");
 	printf("  ***************************欢迎使用学生管理系统*******************************    |\n");
-	printf("|\t1.--学生信息的录入                                                               |\n");
-	printf("|\t2.--学生信息修改                                                                 |\n");
-	printf("|\t3.--学生信息添加                                                                 |\n");
-	printf("|\t4.--学生信息删除                                                                 |\n");
-	printf("|\t5.--删除信息恢复(只能恢复最后一次误删的数据)                                     |\n");
-	printf("|\t6.--学生信息显示                                                                 |\n");
-	printf("|\t7.--学生信息录入文件                                                             |\n");
-	printf("|\t8.--文件读取学生信息                                                             |\n");
-	printf("|\t9.--学生信息查询                                                                 |\n");
+	printf("|\t1.--学生信息的注册                                                               |\n");
+	printf("|\t2.--学生成绩的录入                                                               |\n");
+	printf("|\t3.--学生信息修改                                                                 |\n");
+	printf("|\t4.--学生信息添加                                                                 |\n");
+	printf("|\t5.--学生信息删除                                                                 |\n");
+	printf("|\t6.--删除信息恢复(只能恢复最后一次误删的数据)                                     |\n");
+	printf("|\t7.--学生信息显示                                                                 |\n");
+	printf("|\t8.--学生信息录入文件                                                             |\n");
+	printf("|\t9.--文件读取学生信息                                                             |\n");
+	printf("|\t10.--学生信息查询                                                                 |\n");
 	printf("|*******************************************************************************    |\n");
 	printf("|*******************************************************************************    |\n\n");
 }
 Stu* stu;
 int n;
-int people = 0;
 
 int isEmpey() {    //判断文件是否为空
 	FILE *fp = fopen("input.CSV", "r");
@@ -40,9 +41,9 @@ int isEmpey() {    //判断文件是否为空
 	return 0;
 }
 
-//第一个节点head不储存任何数据
-Stu* build() {    //创建
-	Stu *head = (Stu*)malloc(sizeof(Stu)), *tail = NULL, *p = NULL;  
+Stu* Register_Student_Information()
+{
+	Stu *head = (Stu*)malloc(sizeof(Stu)), *tail = NULL, *p = NULL;
 	printf("请输入你要录入的学生个数：\n");
 	int n, i;
 	scanf("%d", &n);
@@ -56,18 +57,46 @@ Stu* build() {    //创建
 		getchar();
 		printf("请输入第%d个学生的姓名：\n", i);
 		scanf("%s", p->name);
+		head->next = p;
 		getchar();
-		printf("请输入第%d个学生选修的课程名字：\n", i);
-		scanf("%s", p->course);
-		printf("请分别输入第%d个学生的平时成绩,实验成绩,考试成绩,总评成绩：\n", i);
-		scanf("%d%d%d%d", &p->average, &p->experiment, &p->test, &p->sum);
-		tail->next = p;
-		tail = p;
-		tail->next = NULL;
+		head = head->next;
 	}
-	printf("录入成功");
-	keep();
-	return head;
+	head->next = NULL;
+		printf("注册成功\n");
+		return tail;
+}
+//第一个节点head不储存任何数据
+//根据学号输入成绩
+void build_score(Stu *stu,int p) {   
+		int i = 1;
+		Stu * tail = stu->next;
+		Stu * temp = tail;
+		char arr[20];
+		while (i <= people)
+		{
+			printf("学生成绩还没有录入完成\n");
+			printf("请输入学号：\n");
+			scanf("%s", arr);
+			keep();
+			while (temp != NULL)
+			{
+				if (strcmp(arr, temp->id) == 0)
+				{
+					printf("该学号的学生是%s\n", temp->name);
+					printf("请输入该学生的选修课\n");
+					scanf("%s", temp->course);
+					keep();
+					printf("请分别输入该学号下学生的选修课成绩，平时成绩,实验成绩,考试成绩,总评成绩：\n");
+					scanf("%d%d%d%d", &temp->average, &temp->experiment, &temp->test, &temp->sum);
+					keep();
+				}
+				temp = temp->next;
+			}
+			temp = tail;
+			i++;
+		}
+		printf("录入成功");
+		keep();
 }
 
 Stu* buildbyfile() {
