@@ -439,37 +439,37 @@ void mysearch(Stu *stu) {
 	case 1:
 		system("cls");
 		search_id(stu);
-		system("cls");
+		//system("cls");
 		break;
 	case 2:
 		system("cls");
 		search_name(stu);
-		system("cls");
+		//system("cls");
 		break;
 	case 3:
 		system("cls");
 		search_course(stu);
-		system("cls");
+		//system("cls");
 		break;
 	case 4:
 		system("cls");
 		search_average(stu);
-		system("cls");
+		//system("cls");
 		break;
 	case 5:
 		system("cls");
 		search_experiment(stu);
-		system("cls");
+		//system("cls");
 		break;
 	case 6:
 		system("cls");
 		search_test(stu);
-		system("cls");
+		//system("cls");
 		break;
 	case 7:
 		system("cls");
 		search_sum(stu);
-		system("cls");
+		//system("cls");
 		break;
 	}
 }
