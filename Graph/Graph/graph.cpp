@@ -64,17 +64,24 @@ ALGraph<T>::ALGraph(T a[], int n, int e)
 		s->next = adjlist[i].firstedge;      //将结点s插入到结点i的边表的表头  
 		adjlist[i].firstedge = s;
 	}
-	InsertArc(0, 1);                   //插入边
-	InsertArc(0, 2);
-	InsertArc(0, 3);
-	InsertArc(1, 3);
-	InsertArc(1, 4);
-	InsertArc(2, 0);
-	InsertArc(2, 4);
-	InsertArc(3, 1);
-	InsertArc(3, 4);
-	InsertArc(4, 2);
-	InsertArc(4, 3);
+	//InsertArc(0, 1);                   //插入边
+	//InsertArc(1, 0);                   //插入边
+	//InsertArc(0, 2);
+	//InsertArc(2,0);
+	//InsertArc(0, 3);
+	//InsertArc(1, 3);
+	//InsertArc(3, 1);
+
+	//InsertArc(1, 4);
+	//InsertArc(4,1);
+	//InsertArc(2, 0);
+	//InsertArc(2, 4);
+	//InsertArc(3, 1);
+	//InsertArc(3, 4);
+	//InsertArc(4, 3);
+
+	//InsertArc(4, 2);
+	//InsertArc(4, 3);
 }
 /*   前置条件：图已存在
  *   输    入：无
@@ -120,7 +127,8 @@ T ALGraph<T>::GetVex(int i)
 template <class T>
 void ALGraph<T>::PutVex(int i, T value)
 {
-	if (i > vertexNum || i < 0) throw "输入顶点的位置不正确"; //顶点i不存在则抛出异常
+	if (i > vertexNum || i < 0) 
+		throw "输入顶点的位置不正确"; //顶点i不存在则抛出异常
 	adjlist[i].vertex = value;                              //第i个顶点的数据域置为value
 }
 /*
@@ -150,7 +158,8 @@ void ALGraph<T>::InsertVex(int i, T value)
 template <class T>
 void ALGraph<T>::DeleteVex(int i)
 {
-	if (i<0 || i>MaxSize) throw "位置";       //顶点输入错误则抛出异常
+	if (i<0 || i>MaxSize)
+		throw "位置";       //顶点输入错误则抛出异常
 	int k;
 	for (k = 0; k < vertexNum; k++)               //删掉入度边
 		if (k != i)	 DeleteArc(k, i);
@@ -290,8 +299,10 @@ int main()
 	int j;
 	string name;
 	int choose = 1;
-	string a[5] = { "北大","清华","复旦","吉林大学","长春工大" };
-	ALGraph<string> algraphTest(a, 5, 0);        //构造图
+	//string a[5] = { "北大","清华","复旦","吉林大学","长春工大" };
+	string a[5] = { "A","B","C","D","E" };
+
+	ALGraph<string> algraphTest(a, 5, 5);        //构造图
 	while (choose == 1)                                      //控制
 	{
 		cout << "需要输出顶点信息请按0" << endl;		         //输入所要进行的操作的序号
@@ -394,3 +405,13 @@ int main()
 		}
 	}
 }
+/*
+int main()
+{
+	string a[5] = { "A","B","C","D","E" };
+	int edg = 5;
+	ALGraph<string> gra(a, 5, 5);
+	gra.DFSTraverse(0);
+	system("pause");
+	return 0;
+}*/
