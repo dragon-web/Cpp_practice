@@ -1,19 +1,22 @@
 #define _CRT_SECURE_NO_WARNINGS 
-
-//哈夫曼数主要用于编码和压缩
+#define N 5
 
 #include<iostream>
 #include<algorithm>
+#include<vector>
 using namespace std;
 //哈夫曼编码 一般的实现时邻接表或者邻接矩阵
 int i1;
 int i2;
+char AT1;
+char AT2;
 typedef struct HuffNode
 {
 	int weigit;//权值
 	int lchild;
 	int rchild;
 	int parent;
+	vector<int> RE;
 }HuffNode;
 //每次搜索parent为-1最小的值
 void Select(HuffNode huffTree[],int k,int &i1,int &i2);
@@ -28,12 +31,26 @@ void HuffmanTree(HuffNode huffTree[], int w[], int n)//w是权值数组，叶子节点个数
 	for (int i = 0; i < n; i++) //给权值赋值
 	{
 		huffTree[i].weigit = w[i];
+		huffTree[i].RE.push_back(i);
 	}
 	for (int k = n; k < 2 * n - 1; k++)//构建哈夫曼树 0~n-1
 	{
 	
 		Select(huffTree, k,i1,i2);//找到parent为-1的最小和次小节点  存入il i2;
 		huffTree[k].weigit = huffTree[i1].weigit + huffTree[i2].weigit;
+		auto p1 = huffTree[i1].RE.begin();
+		auto p2 = huffTree[i2].RE.begin();
+		while(p1 != huffTree[i1].RE.end())
+		{
+			huffTree[k].RE.push_back(*p1);
+			p1++;
+		}
+		while (p2 != huffTree[i2].RE.end())
+		{
+			huffTree[k].RE.push_back(*p2);
+			p2++;
+		}
+		sort(huffTree[k].RE.begin(), huffTree[k].RE.end());
 		huffTree[i1].parent = k;
 		huffTree[i2].parent = k;
 		huffTree[k].lchild = i1;
@@ -66,174 +83,68 @@ void Select(HuffNode huffTree[], int k, int& i1, int& i2)
 	i1 = temp1;
 	i2 = temp2;
 }
-//a b c d 出现频率是 2 4 5 3 求哈哈夫曼编码
-
-//具体体现为 对于 a b c d进行编码 然后给出编码情况
-void huffmanCoding(char* HuffCode[],HuffNode huffTree[],int n)//这个n是哈夫曼编码的个数  
-{
-	char* temp = new char[n];
-	temp[n - 1] = '\0';
-	for (int i = 0; i < n; ++i)//为啥是n而不是 2*n-1呢?因为我们只需要看叶子节点就行，没必要把所有的都遍历一遍
-	{
-		int start = n - 1;
-		int pos = i;
-		int parent = huffTree[i].parent;
-		while (parent != -1)
-		{
-			if (huffTree[parent].lchild == pos)
-				temp[--start] = '0';
-			else
-				temp[--start] = '1';
-			pos = parent;
-			parent = huffTree[parent].parent;
-		}
-		HuffCode[i] = new char[n - start];//这是个指针数组
-		strcpy(HuffCode[i], &temp[start]);
-	}
-	delete temp;
-}
-
 /*
-
-int main()
+int  Cacular_total(HuffNode huffTree[],int start,int end,int TO, vector<int> bp)
 {
-	int num = 3;
-	int arr[] = { 1,2,5};
-	HuffNode huff[5];
-	HuffmanTree(huff, arr, num);
-	for (int i = 0; i < 5; ++i)
+	int res;
+	int i = 2*N -1;
+	while (bp.size())
 	{
-		cout << huff[i].weigit << " " << huff[i].parent << " " << huff[i].lchild << " " << huff[i].rchild;
-		cout << endl;
-	}
-	system("pause");
-	return 0;
-}
-
-
-*/
-
-
-
-
-//哈夫曼树的构建没有问题
-
-int main()
-{
-	//A B C的出现次数是1 2 5
-	int num = 3;
-	int arr[] = { 1,2,5};
-	HuffNode huff[5];
-	HuffmanTree(huff, arr, num);
-	for (int i = 0; i < 5; ++i)
-	{
-		cout << huff[i].weigit << " " << huff[i].parent << " " << huff[i].lchild << " " << huff[i].rchild;
-		cout << endl;
-	}
-	cout << "______________________________________________________________________________" << endl;
-	char* code[3];
-	huffmanCoding(code, huff, num);
-	for (int i = 0; i < 3; ++i)
-	{
-		printf("%s\n", code[i]);
-	}
-	system("pause");
-	return 0;
-}
-
-
-
-
-/*
-int temp;
-int main()
-{
-	int arr[] = { 1,2,3,4,21,58,7,96,2,56 };
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	int max = arr[0];
-	int max1 = -100;
-	if (sz == 1)
-		max = max1 = arr[0];
-	for (int i = 0; i < sz; ++i)
-	{
-		if (arr[i] > max)
+		if (bp.size() <= huffTree[i].RE.size())
 		{
-			temp = i;// 记录位置
-			max = arr[i];
-		}
-	}
-	for (int j = 0; j < sz; ++j)
-	{
-		if (arr[j] > max1&& j != temp)
-			max1 = arr[j];
-	}
-	cout << "max = " << max << "max1 = " << max1 << endl;
-
-	system("pause");
-	return 0;
-}
-
-*/
-/*
-int temp;
-int main()
-{
-	//如何来找到最大和第二大不用排序
-	int arr[] = { 1,2,3,4,21,58,7,96,2,56};
-	int sz = sizeof(arr) / sizeof(arr[0]);
-	int i = 0;
-	int max;
-	int max1;
-	if (sz == 1)
-	max = max1 = arr[0];
-	for (i; i < sz-1; ++i)
-	{
-		if (arr[i] > arr[i + 1])
-		{
-			max = arr[i];
-			temp = i;//记录最大数的位置
+			auto it1 = bp.begin();
+			auto it2 = huffTree[i].RE.begin();//为啥我敢这么写，因为这个排好序
+			if (*it1 = *it2)
+			{
+				bp.erase(it1);
+				it2++;
+			}
 		}
 		else
 		{
-			max = arr[i+1];
-			temp = i + 1;
+			i--;
 		}
 	}
-	for (int j = 0; j < sz; ++j)
-	{
-		if (j != sz - 1)
-		{
-			if (arr[j] > arr[j + 1] && j != temp)
-			{
-				max1 = arr[j];
-			}
-			if (arr[j] < arr[j + 1] && j + 1 != temp)
-			{
-				max1 = arr[j + 1];
-			}
-		}
-		else if(j != temp && j == sz-1)//最后一个数
-		{
-			max1 = arr[j] > max1 ? arr[j] : max1;
-		}
-		
-	}
-	cout << "max = " << max << "max1 = " << max1 << endl;
 
-	system("pause");
-	return 0;
+	
 }
-
 */
-
-
-/*
 int main()
 {
-	int a = 1 && 2 && 3||4;
-	cout << a << endl;
-
+	
+	vector<int> bp;
+	int arr[N];
+	for (int j = 0; j < N; ++j)
+	{
+		arr[j] = rand() % 100 + 1;
+	}
+	HuffNode huff[2*N-1];
+	HuffmanTree(huff, arr, N);
+	for (int i = 0; i <	2*N -1; ++i)
+	{
+		cout << "帐篷:" << i << "   " << huff[i].weigit << " " << huff[i].parent << " " << huff[i].lchild << " " << huff[i].rchild<<" ";
+		auto it = huff[i].RE.begin();
+		while (it != huff[i].RE.end())
+		{
+			cout << *it;
+			it++;
+		}
+		cout << endl;
+	}
+	cout << "______________________________________________________________________________" << endl;
+	int num1, num2;
+	cout << "Enter Start:" << endl;
+	cin >> num1;
+	getchar();
+	cout << "Enter End:" << endl;
+	cin >> num2;
+	getchar();
+	for (int i = num1; i <= num2; ++i)
+	{
+		bp.push_back(i);
+	}
+	
 	system("pause");
 	return 0;
 }
-*/
+
