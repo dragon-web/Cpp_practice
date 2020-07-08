@@ -1,0 +1,4 @@
+﻿  actual_operation.cpp
+  huffman.cpp
+  正在生成代码...
+c:\users\飞龙\desktop\cpp_practice\actual_operation\actual_operation\huffman.cpp(74): error C4700: 使用了未初始化的局部变量“lnode”
